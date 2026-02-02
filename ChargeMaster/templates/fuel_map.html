@@ -1,0 +1,3088 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c5ab774b26ae5b180ef332edcf751c57 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@master/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_c5ab774b26ae5b180ef332edcf751c57" ></div>
+        
+</body>
+<script>    
+    
+            var map_c5ab774b26ae5b180ef332edcf751c57 = L.map(
+                "map_c5ab774b26ae5b180ef332edcf751c57",
+                {
+                    center: [12.9716, 77.5946],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e3c656d97ffb31fc282746c910b1f772 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var heat_map_6279a5f60ed2d1050c239a64677c21e8 = L.heatLayer(
+                [[12.9346426, 77.6113047], [12.9168833, 77.610429], [12.9505376, 77.5404331], [12.971572, 77.5961296], [12.9570836, 77.5812958], [13.01234, 77.55447], [12.9224993, 77.5847299], [13.019225, 77.5967623], [12.9423658, 77.6080003], [12.916035, 77.5932147], [12.9763407, 77.5342245], [13.0005326, 77.5783275], [12.9703379, 77.5464765], [12.9973969, 77.5538832], [12.9349073, 77.5743587], [12.9879297, 77.5449009], [12.9982695, 77.5528326], [12.9915956, 77.5576509], [12.918853, 77.594394], [12.9454944, 77.6188095], [12.9363279, 77.6231673], [12.9760763, 77.5354187], [12.9976902, 77.5447057], [12.9293363, 77.6279024], [12.9787563, 77.6331015], [13.0019129, 77.5768697], [12.9979238, 77.5623702], [12.9717419, 77.5432263], [12.9956521, 77.5630614], [12.9998653, 77.5635725], [12.9369493, 77.620223], [12.9523426, 77.5777609], [12.9545179, 77.5658733], [12.9150346, 77.5987006], [12.9334167, 77.609958], [12.9522934, 77.6400114], [12.9220423, 77.5932906], [12.9887564, 77.5375838], [12.9762056, 77.6194725], [13.0018509, 77.623479], [12.9295512, 77.6342242], [12.99421, 77.5712141], [12.936906, 77.6057811], [12.9396678, 77.5665728], [12.979799, 77.5480367], [12.9744492, 77.6144135], [12.9992847, 77.5496586], [12.9715987, 77.5945627], [12.9165955, 77.5911669], [12.9731232, 77.6032993], [13.026553, 77.580345], [13.0172473, 77.5563729], [12.9715755, 77.595823], [12.9868193, 77.5399876], [12.9312659, 77.5758251], [12.9154829, 77.6031952], [12.9689782, 77.6361527], [12.9567457, 77.5897275], [12.9794924, 77.5427997], [13.0111694, 77.5546378]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            map_c5ab774b26ae5b180ef332edcf751c57.fitBounds(
+                [[12.9150346, 77.5342245], [13.026553, 77.6400114]],
+                {}
+            );
+        
+    
+            var marker_66f4ecb54d7de954f5ef42c52584af7e = L.marker(
+                [12.9660074, 77.7181261],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_e847e69794cd6106e05bc9a6325ad621 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_66f4ecb54d7de954f5ef42c52584af7e.setIcon(icon_e847e69794cd6106e05bc9a6325ad621);
+        
+    
+        var popup_d79ca26b2f94fe0fa252beec7ad4a73c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fd014d951a2c6fd7528b0efa6b42fa74 = $(`<div id="html_fd014d951a2c6fd7528b0efa6b42fa74" style="width: 100.0%; height: 100.0%;">Brookefield Mall</div>`)[0];
+            popup_d79ca26b2f94fe0fa252beec7ad4a73c.setContent(html_fd014d951a2c6fd7528b0efa6b42fa74);
+        
+
+        marker_66f4ecb54d7de954f5ef42c52584af7e.bindPopup(popup_d79ca26b2f94fe0fa252beec7ad4a73c)
+        ;
+
+        
+    
+    
+            var marker_6fdd7eb2cef0dae1dcc93a715b933882 = L.marker(
+                [13.049016, 77.5935633],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_3a18429f9885edcd8a7f993f7bfd86e9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_6fdd7eb2cef0dae1dcc93a715b933882.setIcon(icon_3a18429f9885edcd8a7f993f7bfd86e9);
+        
+    
+        var popup_9e8046f3fd92cf947b3d0022008d74ae = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b6c4d9a3ca9fae50dd3170aaeacfc91d = $(`<div id="html_b6c4d9a3ca9fae50dd3170aaeacfc91d" style="width: 100.0%; height: 100.0%;">Esteem Mall</div>`)[0];
+            popup_9e8046f3fd92cf947b3d0022008d74ae.setContent(html_b6c4d9a3ca9fae50dd3170aaeacfc91d);
+        
+
+        marker_6fdd7eb2cef0dae1dcc93a715b933882.bindPopup(popup_9e8046f3fd92cf947b3d0022008d74ae)
+        ;
+
+        
+    
+    
+            var marker_dd15a166b897cf9c0fb45358fd1a5aa1 = L.marker(
+                [12.9219671, 77.6202518],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_a0921e210c029a071d7a5f594dbdfe32 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_dd15a166b897cf9c0fb45358fd1a5aa1.setIcon(icon_a0921e210c029a071d7a5f594dbdfe32);
+        
+    
+        var popup_2f275694318f2c32500187550e55bf2c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7cc85bf807faef56597a8483b89ec219 = $(`<div id="html_7cc85bf807faef56597a8483b89ec219" style="width: 100.0%; height: 100.0%;">Market Square Mall</div>`)[0];
+            popup_2f275694318f2c32500187550e55bf2c.setContent(html_7cc85bf807faef56597a8483b89ec219);
+        
+
+        marker_dd15a166b897cf9c0fb45358fd1a5aa1.bindPopup(popup_2f275694318f2c32500187550e55bf2c)
+        ;
+
+        
+    
+    
+            var marker_b2440fe3371c83ff3d97372a5dab3fdc = L.marker(
+                [12.9958017, 77.6963968],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_f4e3c5b931f93a4c099ac13f3ac1a456 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_b2440fe3371c83ff3d97372a5dab3fdc.setIcon(icon_f4e3c5b931f93a4c099ac13f3ac1a456);
+        
+    
+        var popup_a296ff523cb9dc52d4756d219d93df2e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9647e92e49ac43ecf4b771d9499b770b = $(`<div id="html_9647e92e49ac43ecf4b771d9499b770b" style="width: 100.0%; height: 100.0%;">Phoenix Marketcity</div>`)[0];
+            popup_a296ff523cb9dc52d4756d219d93df2e.setContent(html_9647e92e49ac43ecf4b771d9499b770b);
+        
+
+        marker_b2440fe3371c83ff3d97372a5dab3fdc.bindPopup(popup_a296ff523cb9dc52d4756d219d93df2e)
+        ;
+
+        
+    
+    
+            var marker_70a5cf671945caf010a5d97fbeba5910 = L.marker(
+                [13.0450957, 77.6268964],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_c8a1162990b97b678aa3cf6b45428685 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_70a5cf671945caf010a5d97fbeba5910.setIcon(icon_c8a1162990b97b678aa3cf6b45428685);
+        
+    
+        var popup_f086e8ae752ea3b28c0ae23aabc349f8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_aaf04d0da3b39d4070161bd7b6e9532b = $(`<div id="html_aaf04d0da3b39d4070161bd7b6e9532b" style="width: 100.0%; height: 100.0%;">Elements Mall</div>`)[0];
+            popup_f086e8ae752ea3b28c0ae23aabc349f8.setContent(html_aaf04d0da3b39d4070161bd7b6e9532b);
+        
+
+        marker_70a5cf671945caf010a5d97fbeba5910.bindPopup(popup_f086e8ae752ea3b28c0ae23aabc349f8)
+        ;
+
+        
+    
+    
+            var marker_51f1d3605afee8b65e3019b450fc8d7e = L.marker(
+                [12.9869757, 77.7363332],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_d531aeeff217e93f8a522d521c586e07 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_51f1d3605afee8b65e3019b450fc8d7e.setIcon(icon_d531aeeff217e93f8a522d521c586e07);
+        
+    
+        var popup_922ffb6d477aceed01972e3986cee573 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5a3ee424ad462fbca0d3cf99072259c0 = $(`<div id="html_5a3ee424ad462fbca0d3cf99072259c0" style="width: 100.0%; height: 100.0%;">Ascendas Park Square Mall</div>`)[0];
+            popup_922ffb6d477aceed01972e3986cee573.setContent(html_5a3ee424ad462fbca0d3cf99072259c0);
+        
+
+        marker_51f1d3605afee8b65e3019b450fc8d7e.bindPopup(popup_922ffb6d477aceed01972e3986cee573)
+        ;
+
+        
+    
+    
+            var marker_8b32eeb589f1838c8a047eb42ad9312e = L.marker(
+                [13.0009569, 77.6325712],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_caa3e71d560eff5a43c98818dcccbaf4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_8b32eeb589f1838c8a047eb42ad9312e.setIcon(icon_caa3e71d560eff5a43c98818dcccbaf4);
+        
+    
+        var popup_8e9edf433c330db34e8a1c42a20b1dcb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fdb7e4143d845cd0449a854b8dda397c = $(`<div id="html_fdb7e4143d845cd0449a854b8dda397c" style="width: 100.0%; height: 100.0%;">Orion Avenue</div>`)[0];
+            popup_8e9edf433c330db34e8a1c42a20b1dcb.setContent(html_fdb7e4143d845cd0449a854b8dda397c);
+        
+
+        marker_8b32eeb589f1838c8a047eb42ad9312e.bindPopup(popup_8e9edf433c330db34e8a1c42a20b1dcb)
+        ;
+
+        
+    
+    
+            var marker_6e0cd6a116a7eea2a4e5f4a5d7e5c6c9 = L.marker(
+                [12.9144032, 77.5995815],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_dadc4ea8af7ed06f58ce022fdfec4b0c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_6e0cd6a116a7eea2a4e5f4a5d7e5c6c9.setIcon(icon_dadc4ea8af7ed06f58ce022fdfec4b0c);
+        
+    
+        var popup_236242f7c83c4b8acaefd821178b27a6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8c04619ead0c4a4b5abc3b5181ea08a7 = $(`<div id="html_8c04619ead0c4a4b5abc3b5181ea08a7" style="width: 100.0%; height: 100.0%;">Gopalan Innovation Mall</div>`)[0];
+            popup_236242f7c83c4b8acaefd821178b27a6.setContent(html_8c04619ead0c4a4b5abc3b5181ea08a7);
+        
+
+        marker_6e0cd6a116a7eea2a4e5f4a5d7e5c6c9.bindPopup(popup_236242f7c83c4b8acaefd821178b27a6)
+        ;
+
+        
+    
+    
+            var marker_eb33ffdfcbb0d2960ec926edcb4f1a74 = L.marker(
+                [12.9575403, 77.7451366],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_25d826bf0400dba567bea31763b6095b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_eb33ffdfcbb0d2960ec926edcb4f1a74.setIcon(icon_25d826bf0400dba567bea31763b6095b);
+        
+    
+        var popup_936b2b10d2727564854612b0b667ab54 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4a912ee1b5dcd7bc9acf07c2432b0fcd = $(`<div id="html_4a912ee1b5dcd7bc9acf07c2432b0fcd" style="width: 100.0%; height: 100.0%;">Virginia Mall</div>`)[0];
+            popup_936b2b10d2727564854612b0b667ab54.setContent(html_4a912ee1b5dcd7bc9acf07c2432b0fcd);
+        
+
+        marker_eb33ffdfcbb0d2960ec926edcb4f1a74.bindPopup(popup_936b2b10d2727564854612b0b667ab54)
+        ;
+
+        
+    
+    
+            var marker_d4e5ffc7221c474c50ac349ab5d27cc0 = L.marker(
+                [12.9166593, 77.6713292],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_a788d4c74802d7540a93a98b6c0577e4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_d4e5ffc7221c474c50ac349ab5d27cc0.setIcon(icon_a788d4c74802d7540a93a98b6c0577e4);
+        
+    
+        var popup_406fb043a6f7301f0d91d9412b6f7c49 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_050cc66c98c9f63d3cff2bcdc846181c = $(`<div id="html_050cc66c98c9f63d3cff2bcdc846181c" style="width: 100.0%; height: 100.0%;">Market Square Mall Sarjapur Road</div>`)[0];
+            popup_406fb043a6f7301f0d91d9412b6f7c49.setContent(html_050cc66c98c9f63d3cff2bcdc846181c);
+        
+
+        marker_d4e5ffc7221c474c50ac349ab5d27cc0.bindPopup(popup_406fb043a6f7301f0d91d9412b6f7c49)
+        ;
+
+        
+    
+    
+            var marker_1813525d63d533cea852ea828f15b92e = L.marker(
+                [12.9065361, 77.603314],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_c104776623bbe489d6a3645bc898215b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_1813525d63d533cea852ea828f15b92e.setIcon(icon_c104776623bbe489d6a3645bc898215b);
+        
+    
+        var popup_91769c19886c1f7e49aa7de8f7e709d1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e9be46aa547777589c9c1139aac661d5 = $(`<div id="html_e9be46aa547777589c9c1139aac661d5" style="width: 100.0%; height: 100.0%;">Sampoorna Shopping Center</div>`)[0];
+            popup_91769c19886c1f7e49aa7de8f7e709d1.setContent(html_e9be46aa547777589c9c1139aac661d5);
+        
+
+        marker_1813525d63d533cea852ea828f15b92e.bindPopup(popup_91769c19886c1f7e49aa7de8f7e709d1)
+        ;
+
+        
+    
+    
+            var marker_408d1e0f600bef02220c93dc64641d1c = L.marker(
+                [13.0159224, 77.6378681],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_1ead10f73451309b2613b6009afb3e71 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_408d1e0f600bef02220c93dc64641d1c.setIcon(icon_1ead10f73451309b2613b6009afb3e71);
+        
+    
+        var popup_3312c382f39acf5d92f5775a86c10160 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b8cbcfda3645a67d840f8bd124f54fca = $(`<div id="html_b8cbcfda3645a67d840f8bd124f54fca" style="width: 100.0%; height: 100.0%;">LML MALL Shopping Mall</div>`)[0];
+            popup_3312c382f39acf5d92f5775a86c10160.setContent(html_b8cbcfda3645a67d840f8bd124f54fca);
+        
+
+        marker_408d1e0f600bef02220c93dc64641d1c.bindPopup(popup_3312c382f39acf5d92f5775a86c10160)
+        ;
+
+        
+    
+    
+            var marker_40d8fb7852d11afe261e20b9aea4aa32 = L.marker(
+                [12.9344398, 77.6112678],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_ff91bb86579cd522c89f21712c375f59 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_40d8fb7852d11afe261e20b9aea4aa32.setIcon(icon_ff91bb86579cd522c89f21712c375f59);
+        
+    
+        var popup_f17924ef160962e0e92f15f640d4fac2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4f6fe94c62413ec6350ae56a9cfdfcd8 = $(`<div id="html_4f6fe94c62413ec6350ae56a9cfdfcd8" style="width: 100.0%; height: 100.0%;">Nexus Mall Koramangala</div>`)[0];
+            popup_f17924ef160962e0e92f15f640d4fac2.setContent(html_4f6fe94c62413ec6350ae56a9cfdfcd8);
+        
+
+        marker_40d8fb7852d11afe261e20b9aea4aa32.bindPopup(popup_f17924ef160962e0e92f15f640d4fac2)
+        ;
+
+        
+    
+    
+            var marker_faff45008ac1c79b1b1ffa13c7d861fe = L.marker(
+                [12.9596271, 77.7479488],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_7e928fc79fa69224f0dd00f78ef4166f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_faff45008ac1c79b1b1ffa13c7d861fe.setIcon(icon_7e928fc79fa69224f0dd00f78ef4166f);
+        
+    
+        var popup_4025facba6ff52e522bcf3c4e90c4cd0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b88956e4841b739b891cf31b61289b30 = $(`<div id="html_b88956e4841b739b891cf31b61289b30" style="width: 100.0%; height: 100.0%;">Nexus Whitefield (The Forum Neighbourhood Mall)</div>`)[0];
+            popup_4025facba6ff52e522bcf3c4e90c4cd0.setContent(html_b88956e4841b739b891cf31b61289b30);
+        
+
+        marker_faff45008ac1c79b1b1ffa13c7d861fe.bindPopup(popup_4025facba6ff52e522bcf3c4e90c4cd0)
+        ;
+
+        
+    
+    
+            var marker_5e9e921bcac0323f707ceed5b36d37e4 = L.marker(
+                [12.9669731, 77.5400346],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_e3993b736c356b282d8c1cad2ecf906f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_5e9e921bcac0323f707ceed5b36d37e4.setIcon(icon_e3993b736c356b282d8c1cad2ecf906f);
+        
+    
+        var popup_33f551f2bfa2ecbffdee3f45995f2882 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1cfec41bb85daffc78ef7bd497de7a12 = $(`<div id="html_1cfec41bb85daffc78ef7bd497de7a12" style="width: 100.0%; height: 100.0%;">Market place Vijayanagar</div>`)[0];
+            popup_33f551f2bfa2ecbffdee3f45995f2882.setContent(html_1cfec41bb85daffc78ef7bd497de7a12);
+        
+
+        marker_5e9e921bcac0323f707ceed5b36d37e4.bindPopup(popup_33f551f2bfa2ecbffdee3f45995f2882)
+        ;
+
+        
+    
+    
+            var marker_e270eedcb519690a5ca2372c7c958f3a = L.marker(
+                [12.9219084, 77.6204084],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_487f205f7415afaccc9ae8f200662bca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_e270eedcb519690a5ca2372c7c958f3a.setIcon(icon_487f205f7415afaccc9ae8f200662bca);
+        
+    
+        var popup_60c2f1e121409654008bc7dcb1a60269 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5fb80c59ff1c3cb0e140092ae95c2d3c = $(`<div id="html_5fb80c59ff1c3cb0e140092ae95c2d3c" style="width: 100.0%; height: 100.0%;">Total Mall</div>`)[0];
+            popup_60c2f1e121409654008bc7dcb1a60269.setContent(html_5fb80c59ff1c3cb0e140092ae95c2d3c);
+        
+
+        marker_e270eedcb519690a5ca2372c7c958f3a.bindPopup(popup_60c2f1e121409654008bc7dcb1a60269)
+        ;
+
+        
+    
+    
+            var marker_4d5a3c55112efe26581db5c321a67b0a = L.marker(
+                [12.9388961, 77.7412074],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_e0d7bda0a8fc326195070730f2cbb9cb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_4d5a3c55112efe26581db5c321a67b0a.setIcon(icon_e0d7bda0a8fc326195070730f2cbb9cb);
+        
+    
+        var popup_c1abbcb9d8fbfdb4bd9124745aa1a547 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_26897c678fdd49cf2f86990a5ab35ce0 = $(`<div id="html_26897c678fdd49cf2f86990a5ab35ce0" style="width: 100.0%; height: 100.0%;">Central</div>`)[0];
+            popup_c1abbcb9d8fbfdb4bd9124745aa1a547.setContent(html_26897c678fdd49cf2f86990a5ab35ce0);
+        
+
+        marker_4d5a3c55112efe26581db5c321a67b0a.bindPopup(popup_c1abbcb9d8fbfdb4bd9124745aa1a547)
+        ;
+
+        
+    
+    
+            var marker_1fde105fd92d0e2b18e16f5226219fc3 = L.marker(
+                [13.0942361, 77.5949472],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_9ceb5e6468c07bf303906cb670b230c0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_1fde105fd92d0e2b18e16f5226219fc3.setIcon(icon_9ceb5e6468c07bf303906cb670b230c0);
+        
+    
+        var popup_151d866a68b739bf57a812b96ee960a3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dd1c0dc1abfcf6629af65a7b59e3fa82 = $(`<div id="html_dd1c0dc1abfcf6629af65a7b59e3fa82" style="width: 100.0%; height: 100.0%;">The Galleria Mall</div>`)[0];
+            popup_151d866a68b739bf57a812b96ee960a3.setContent(html_dd1c0dc1abfcf6629af65a7b59e3fa82);
+        
+
+        marker_1fde105fd92d0e2b18e16f5226219fc3.bindPopup(popup_151d866a68b739bf57a812b96ee960a3)
+        ;
+
+        
+    
+    
+            var marker_171a3c0a60432504a7cce3b67798f886 = L.marker(
+                [13.0983706, 77.581857],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_d489f6cf4dbb1df512cb6778247eb25e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_171a3c0a60432504a7cce3b67798f886.setIcon(icon_d489f6cf4dbb1df512cb6778247eb25e);
+        
+    
+        var popup_b77526ba183688e9ba7e79272ea1837b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b01efe939ada7021e82dc46221644590 = $(`<div id="html_b01efe939ada7021e82dc46221644590" style="width: 100.0%; height: 100.0%;">Yelahanka New Town Shopping Complex</div>`)[0];
+            popup_b77526ba183688e9ba7e79272ea1837b.setContent(html_b01efe939ada7021e82dc46221644590);
+        
+
+        marker_171a3c0a60432504a7cce3b67798f886.bindPopup(popup_b77526ba183688e9ba7e79272ea1837b)
+        ;
+
+        
+    
+    
+            var marker_08f0e50fab66d58fa06b483f92e93069 = L.marker(
+                [12.9771132, 77.5704966],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_19d94c9b6aee702b81fe988830bb9277 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_08f0e50fab66d58fa06b483f92e93069.setIcon(icon_19d94c9b6aee702b81fe988830bb9277);
+        
+    
+        var popup_bbb11e2d82141b062e69536af804320d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c9dbd4714d33895a30914c85224846ae = $(`<div id="html_c9dbd4714d33895a30914c85224846ae" style="width: 100.0%; height: 100.0%;">Sri Rampuram Shopping Complex</div>`)[0];
+            popup_bbb11e2d82141b062e69536af804320d.setContent(html_c9dbd4714d33895a30914c85224846ae);
+        
+
+        marker_08f0e50fab66d58fa06b483f92e93069.bindPopup(popup_bbb11e2d82141b062e69536af804320d)
+        ;
+
+        
+    
+    
+            var marker_209591ac53f1dd3d529cb10419684332 = L.marker(
+                [12.9826516, 77.6095684],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_8a070f2d2f1e3a1868bebfd63d276af2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_209591ac53f1dd3d529cb10419684332.setIcon(icon_8a070f2d2f1e3a1868bebfd63d276af2);
+        
+    
+        var popup_915af0d6c196819df6d5c7e978e1d08b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4a1919b7ce88a55612c80ee1431a19b5 = $(`<div id="html_4a1919b7ce88a55612c80ee1431a19b5" style="width: 100.0%; height: 100.0%;">Plazzo Retail Mall</div>`)[0];
+            popup_915af0d6c196819df6d5c7e978e1d08b.setContent(html_4a1919b7ce88a55612c80ee1431a19b5);
+        
+
+        marker_209591ac53f1dd3d529cb10419684332.bindPopup(popup_915af0d6c196819df6d5c7e978e1d08b)
+        ;
+
+        
+    
+    
+            var marker_4f072ca59515262c89ac803c4b080602 = L.marker(
+                [12.989536, 77.7281015],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_a215f4faaa05e972092b8d4504a1f2e0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_4f072ca59515262c89ac803c4b080602.setIcon(icon_a215f4faaa05e972092b8d4504a1f2e0);
+        
+    
+        var popup_18ab4812126b15967152d81691d3188e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6462498748bf6b29e1861a025bea10b8 = $(`<div id="html_6462498748bf6b29e1861a025bea10b8" style="width: 100.0%; height: 100.0%;">Nexus Shantiniketan Mall</div>`)[0];
+            popup_18ab4812126b15967152d81691d3188e.setContent(html_6462498748bf6b29e1861a025bea10b8);
+        
+
+        marker_4f072ca59515262c89ac803c4b080602.bindPopup(popup_18ab4812126b15967152d81691d3188e)
+        ;
+
+        
+    
+    
+            var marker_3e7090912767f292a2a48b20c8a17274 = L.marker(
+                [12.9569465, 77.7010732],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_04be58ebb5f36eb76cbcadc39769b912 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_3e7090912767f292a2a48b20c8a17274.setIcon(icon_04be58ebb5f36eb76cbcadc39769b912);
+        
+    
+        var popup_863a547088acf3e66d6c71bb8332783c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_53d90876253f222421b77aed8fba7544 = $(`<div id="html_53d90876253f222421b77aed8fba7544" style="width: 100.0%; height: 100.0%;">Times Square, Marathahalli</div>`)[0];
+            popup_863a547088acf3e66d6c71bb8332783c.setContent(html_53d90876253f222421b77aed8fba7544);
+        
+
+        marker_3e7090912767f292a2a48b20c8a17274.bindPopup(popup_863a547088acf3e66d6c71bb8332783c)
+        ;
+
+        
+    
+    
+            var marker_92aae186227073c7145b884084c5d01f = L.marker(
+                [12.9587687, 77.6568673],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_268d90ea38519fe04cf9843cda4f6573 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_92aae186227073c7145b884084c5d01f.setIcon(icon_268d90ea38519fe04cf9843cda4f6573);
+        
+    
+        var popup_59d37a88733e3e624e60dd2c31879705 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7c8abb85d58dbf8729eaffd598519c1f = $(`<div id="html_7c8abb85d58dbf8729eaffd598519c1f" style="width: 100.0%; height: 100.0%;">Total Mall</div>`)[0];
+            popup_59d37a88733e3e624e60dd2c31879705.setContent(html_7c8abb85d58dbf8729eaffd598519c1f);
+        
+
+        marker_92aae186227073c7145b884084c5d01f.bindPopup(popup_59d37a88733e3e624e60dd2c31879705)
+        ;
+
+        
+    
+    
+            var marker_cd038d01e37fa530d9833bb6e5a47bdd = L.marker(
+                [12.995611, 77.7005735],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_56f6cf08e790aad02ce72e94cd71f8ac = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_cd038d01e37fa530d9833bb6e5a47bdd.setIcon(icon_56f6cf08e790aad02ce72e94cd71f8ac);
+        
+    
+        var popup_40afc6b98751412915ebcfdcaaa9aae5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8a426b0f3122565256b8e89bce8367ed = $(`<div id="html_8a426b0f3122565256b8e89bce8367ed" style="width: 100.0%; height: 100.0%;">Metro shopping Complex</div>`)[0];
+            popup_40afc6b98751412915ebcfdcaaa9aae5.setContent(html_8a426b0f3122565256b8e89bce8367ed);
+        
+
+        marker_cd038d01e37fa530d9833bb6e5a47bdd.bindPopup(popup_40afc6b98751412915ebcfdcaaa9aae5)
+        ;
+
+        
+    
+    
+            var marker_c4232d34ccc03547c61b5b6925481dd5 = L.marker(
+                [12.9958569, 77.6956414],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_0d437243318e2bbc7538e6fa7f6b7338 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_c4232d34ccc03547c61b5b6925481dd5.setIcon(icon_0d437243318e2bbc7538e6fa7f6b7338);
+        
+    
+        var popup_30fa14694a30abafec268ca1a81b788e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9d6284d4d17231f4615255f2f22f7092 = $(`<div id="html_9d6284d4d17231f4615255f2f22f7092" style="width: 100.0%; height: 100.0%;">VR Bengaluru</div>`)[0];
+            popup_30fa14694a30abafec268ca1a81b788e.setContent(html_9d6284d4d17231f4615255f2f22f7092);
+        
+
+        marker_c4232d34ccc03547c61b5b6925481dd5.bindPopup(popup_30fa14694a30abafec268ca1a81b788e)
+        ;
+
+        
+    
+    
+            var marker_a77b26ff7f704dbf21a0548889e68f64 = L.marker(
+                [12.9742789, 77.577852],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_2fd2d8580e7418ebd1a9be10df6ee436 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_a77b26ff7f704dbf21a0548889e68f64.setIcon(icon_2fd2d8580e7418ebd1a9be10df6ee436);
+        
+    
+        var popup_fee038b395a406e013592f499ec7ad6d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_34116da3849a85d65d1898c66202a57f = $(`<div id="html_34116da3849a85d65d1898c66202a57f" style="width: 100.0%; height: 100.0%;">Citi Center Shopping Arcade</div>`)[0];
+            popup_fee038b395a406e013592f499ec7ad6d.setContent(html_34116da3849a85d65d1898c66202a57f);
+        
+
+        marker_a77b26ff7f704dbf21a0548889e68f64.bindPopup(popup_fee038b395a406e013592f499ec7ad6d)
+        ;
+
+        
+    
+    
+            var marker_5d562ad26deaa365abec306d20dcc77d = L.marker(
+                [12.9454238, 77.5712939],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_2623e74f9ecfca916967bae2ce3bfd9a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_5d562ad26deaa365abec306d20dcc77d.setIcon(icon_2623e74f9ecfca916967bae2ce3bfd9a);
+        
+    
+        var popup_c27d9efc5ea37259f663e61a96bd9176 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2d4a48c54c6162d1344dc04f472dbe10 = $(`<div id="html_2d4a48c54c6162d1344dc04f472dbe10" style="width: 100.0%; height: 100.0%;">Shopping mall</div>`)[0];
+            popup_c27d9efc5ea37259f663e61a96bd9176.setContent(html_2d4a48c54c6162d1344dc04f472dbe10);
+        
+
+        marker_5d562ad26deaa365abec306d20dcc77d.bindPopup(popup_c27d9efc5ea37259f663e61a96bd9176)
+        ;
+
+        
+    
+    
+            var marker_a7a992feefa9ca651a6ccbffaa9c5e3c = L.marker(
+                [12.974689, 77.6078077],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_078f35cf4aea940da54dcbd80e8aec16 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_a7a992feefa9ca651a6ccbffaa9c5e3c.setIcon(icon_078f35cf4aea940da54dcbd80e8aec16);
+        
+    
+        var popup_78904111624556ac7157c1cba411ece3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e4a8ee5630d349a76ba0f8b8a8b676a9 = $(`<div id="html_e4a8ee5630d349a76ba0f8b8a8b676a9" style="width: 100.0%; height: 100.0%;">Brigade Originals</div>`)[0];
+            popup_78904111624556ac7157c1cba411ece3.setContent(html_e4a8ee5630d349a76ba0f8b8a8b676a9);
+        
+
+        marker_a7a992feefa9ca651a6ccbffaa9c5e3c.bindPopup(popup_78904111624556ac7157c1cba411ece3)
+        ;
+
+        
+    
+    
+            var marker_3fe79a73a1f1a3d2e333224c11035256 = L.marker(
+                [13.0301328, 77.570475],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_c0bf9301f257db80fbd393429179bfd1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_3fe79a73a1f1a3d2e333224c11035256.setIcon(icon_c0bf9301f257db80fbd393429179bfd1);
+        
+    
+        var popup_4b61a92ab7906bb83e70c18f815ab463 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f7540d3226bb32959c59b3f8d9b1b1ef = $(`<div id="html_f7540d3226bb32959c59b3f8d9b1b1ef" style="width: 100.0%; height: 100.0%;">Shopping Complex</div>`)[0];
+            popup_4b61a92ab7906bb83e70c18f815ab463.setContent(html_f7540d3226bb32959c59b3f8d9b1b1ef);
+        
+
+        marker_3fe79a73a1f1a3d2e333224c11035256.bindPopup(popup_4b61a92ab7906bb83e70c18f815ab463)
+        ;
+
+        
+    
+    
+            var marker_f0a2913280ebc19d60f8984f199f2066 = L.marker(
+                [12.9808231, 77.6405588],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_01ef9c279c1e3d6d2513bdb9c6c2b92e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_f0a2913280ebc19d60f8984f199f2066.setIcon(icon_01ef9c279c1e3d6d2513bdb9c6c2b92e);
+        
+    
+        var popup_44e207f0c6c6b79627b58e260c00a877 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_38b17d268a030b60cf255adfb0c288d4 = $(`<div id="html_38b17d268a030b60cf255adfb0c288d4" style="width: 100.0%; height: 100.0%;">Kaypee Square</div>`)[0];
+            popup_44e207f0c6c6b79627b58e260c00a877.setContent(html_38b17d268a030b60cf255adfb0c288d4);
+        
+
+        marker_f0a2913280ebc19d60f8984f199f2066.bindPopup(popup_44e207f0c6c6b79627b58e260c00a877)
+        ;
+
+        
+    
+    
+            var marker_39f70330fbc82636d2b65eb58f8ae9b9 = L.marker(
+                [13.0110582, 77.5550644],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_7ad33b80f212e4d37e683a90a53b179d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_39f70330fbc82636d2b65eb58f8ae9b9.setIcon(icon_7ad33b80f212e4d37e683a90a53b179d);
+        
+    
+        var popup_7305c2880e4c29f3b67076bd3eaf773c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_329483454b17720b77382911a9fc8862 = $(`<div id="html_329483454b17720b77382911a9fc8862" style="width: 100.0%; height: 100.0%;">Orion Mall</div>`)[0];
+            popup_7305c2880e4c29f3b67076bd3eaf773c.setContent(html_329483454b17720b77382911a9fc8862);
+        
+
+        marker_39f70330fbc82636d2b65eb58f8ae9b9.bindPopup(popup_7305c2880e4c29f3b67076bd3eaf773c)
+        ;
+
+        
+    
+    
+            var marker_ce2b25b26f3deaa704b8b95f7516a8b2 = L.marker(
+                [12.9453492, 77.5954342],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_7623e15a6a8a7a5f3f32bbe102951245 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_ce2b25b26f3deaa704b8b95f7516a8b2.setIcon(icon_7623e15a6a8a7a5f3f32bbe102951245);
+        
+    
+        var popup_2a2e7268b58bd38bea9eef37c4ad16c1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_47115e4a89e5773d3a1ada75fa5f6eb7 = $(`<div id="html_47115e4a89e5773d3a1ada75fa5f6eb7" style="width: 100.0%; height: 100.0%;">Hara Rama Mall</div>`)[0];
+            popup_2a2e7268b58bd38bea9eef37c4ad16c1.setContent(html_47115e4a89e5773d3a1ada75fa5f6eb7);
+        
+
+        marker_ce2b25b26f3deaa704b8b95f7516a8b2.bindPopup(popup_2a2e7268b58bd38bea9eef37c4ad16c1)
+        ;
+
+        
+    
+    
+            var marker_57280e6974f619d8fb77395bcc844c38 = L.marker(
+                [12.8913892, 77.596796],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_c7ab316c67c8862ea2873b82dcc68736 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_57280e6974f619d8fb77395bcc844c38.setIcon(icon_c7ab316c67c8862ea2873b82dcc68736);
+        
+    
+        var popup_b8349aecd5219e56cec532c66a5ed4c4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4fa8a0a74db5957219bbadb3e572c939 = $(`<div id="html_4fa8a0a74db5957219bbadb3e572c939" style="width: 100.0%; height: 100.0%;">Prime Spectrum Mall</div>`)[0];
+            popup_b8349aecd5219e56cec532c66a5ed4c4.setContent(html_4fa8a0a74db5957219bbadb3e572c939);
+        
+
+        marker_57280e6974f619d8fb77395bcc844c38.bindPopup(popup_b8349aecd5219e56cec532c66a5ed4c4)
+        ;
+
+        
+    
+    
+            var marker_0e869366e1b542b7fd2aca8383739ae0 = L.marker(
+                [12.925869, 77.675358],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_f35ba39ce059437b79b657bff0cc97fa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_0e869366e1b542b7fd2aca8383739ae0.setIcon(icon_f35ba39ce059437b79b657bff0cc97fa);
+        
+    
+        var popup_451cea74983804355807d42e1340e64a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_64e4ff0679e4303ec6a4c3614d47cab0 = $(`<div id="html_64e4ff0679e4303ec6a4c3614d47cab0" style="width: 100.0%; height: 100.0%;">Soul Space Spirit Central Mall</div>`)[0];
+            popup_451cea74983804355807d42e1340e64a.setContent(html_64e4ff0679e4303ec6a4c3614d47cab0);
+        
+
+        marker_0e869366e1b542b7fd2aca8383739ae0.bindPopup(popup_451cea74983804355807d42e1340e64a)
+        ;
+
+        
+    
+    
+            var marker_18b366326dd6658a228e4d999cfa2f7d = L.marker(
+                [12.9928056, 77.6611738],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_c9b658583fab75d5223f419e7bf42af0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_18b366326dd6658a228e4d999cfa2f7d.setIcon(icon_c9b658583fab75d5223f419e7bf42af0);
+        
+    
+        var popup_a8ff8888377ea012acf7674dbe6da3fc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a35dfdffa496167d638eb5edf9d3fbb7 = $(`<div id="html_a35dfdffa496167d638eb5edf9d3fbb7" style="width: 100.0%; height: 100.0%;">Gopalan Signature Mall</div>`)[0];
+            popup_a8ff8888377ea012acf7674dbe6da3fc.setContent(html_a35dfdffa496167d638eb5edf9d3fbb7);
+        
+
+        marker_18b366326dd6658a228e4d999cfa2f7d.bindPopup(popup_a8ff8888377ea012acf7674dbe6da3fc)
+        ;
+
+        
+    
+    
+            var marker_c9b9a385442cf9f6a1aa680a540f478d = L.marker(
+                [12.9702626, 77.6099629],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_7eb769c41592a9128d7abacf682c36bf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_c9b9a385442cf9f6a1aa680a540f478d.setIcon(icon_7eb769c41592a9128d7abacf682c36bf);
+        
+    
+        var popup_2fda1f2408b6954d7294839a7d4d0257 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b35c3bd5af51025cfa6b4b687dda8f9b = $(`<div id="html_b35c3bd5af51025cfa6b4b687dda8f9b" style="width: 100.0%; height: 100.0%;">Garuda Mall</div>`)[0];
+            popup_2fda1f2408b6954d7294839a7d4d0257.setContent(html_b35c3bd5af51025cfa6b4b687dda8f9b);
+        
+
+        marker_c9b9a385442cf9f6a1aa680a540f478d.bindPopup(popup_2fda1f2408b6954d7294839a7d4d0257)
+        ;
+
+        
+    
+    
+            var marker_52ed00b9e1b6a318f85cf2ce35496ed5 = L.marker(
+                [12.9265531, 77.5508278],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_d00ebf70d6ef8ae6f41dc2cf8bc18871 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_52ed00b9e1b6a318f85cf2ce35496ed5.setIcon(icon_d00ebf70d6ef8ae6f41dc2cf8bc18871);
+        
+    
+        var popup_5d4c77b48fa25576fdced3adda2c4f37 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8cac56683f8a820707969ee9b0985735 = $(`<div id="html_8cac56683f8a820707969ee9b0985735" style="width: 100.0%; height: 100.0%;">Gopalan Promenade Mall</div>`)[0];
+            popup_5d4c77b48fa25576fdced3adda2c4f37.setContent(html_8cac56683f8a820707969ee9b0985735);
+        
+
+        marker_52ed00b9e1b6a318f85cf2ce35496ed5.bindPopup(popup_5d4c77b48fa25576fdced3adda2c4f37)
+        ;
+
+        
+    
+    
+            var marker_6b0369c0431fc38d7372bae0258e3d12 = L.marker(
+                [12.9124089, 77.6004591],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_0c8fe764225c348c2a50d32be4bd7e3a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_6b0369c0431fc38d7372bae0258e3d12.setIcon(icon_0c8fe764225c348c2a50d32be4bd7e3a);
+        
+    
+        var popup_545ef68fa1c978bdece12716aafaee1d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_229e410c66352b9c033de486832df8b6 = $(`<div id="html_229e410c66352b9c033de486832df8b6" style="width: 100.0%; height: 100.0%;">Elegance Mantri Mall</div>`)[0];
+            popup_545ef68fa1c978bdece12716aafaee1d.setContent(html_229e410c66352b9c033de486832df8b6);
+        
+
+        marker_6b0369c0431fc38d7372bae0258e3d12.bindPopup(popup_545ef68fa1c978bdece12716aafaee1d)
+        ;
+
+        
+    
+    
+            var marker_e4d7e38e53bfe3c5d75efbc7b9a5a55c = L.marker(
+                [12.9971372, 77.6014861],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_604019d8bfc44959ed2bb50ebc10ee62 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_e4d7e38e53bfe3c5d75efbc7b9a5a55c.setIcon(icon_604019d8bfc44959ed2bb50ebc10ee62);
+        
+    
+        var popup_2b41d33093f42e73bc020bde6aa2e41f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_74dfa5edcb434ba2a0bf7082b5f1d8fe = $(`<div id="html_74dfa5edcb434ba2a0bf7082b5f1d8fe" style="width: 100.0%; height: 100.0%;">IMA Shopping Mall</div>`)[0];
+            popup_2b41d33093f42e73bc020bde6aa2e41f.setContent(html_74dfa5edcb434ba2a0bf7082b5f1d8fe);
+        
+
+        marker_e4d7e38e53bfe3c5d75efbc7b9a5a55c.bindPopup(popup_2b41d33093f42e73bc020bde6aa2e41f)
+        ;
+
+        
+    
+    
+            var marker_feab43a22ffa6a159a94e8a9426f84e3 = L.marker(
+                [12.9818734, 77.609643],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_211a5154047d7793a638ea76daa7f2be = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_feab43a22ffa6a159a94e8a9426f84e3.setIcon(icon_211a5154047d7793a638ea76daa7f2be);
+        
+    
+        var popup_39be61ba4a2a618024d7deaffed0ae21 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c69d10b492f3fd04192a43a3358ea928 = $(`<div id="html_c69d10b492f3fd04192a43a3358ea928" style="width: 100.0%; height: 100.0%;">100rs Shop</div>`)[0];
+            popup_39be61ba4a2a618024d7deaffed0ae21.setContent(html_c69d10b492f3fd04192a43a3358ea928);
+        
+
+        marker_feab43a22ffa6a159a94e8a9426f84e3.bindPopup(popup_39be61ba4a2a618024d7deaffed0ae21)
+        ;
+
+        
+    
+    
+            var marker_274a20e58a8bfd2e582493630f003357 = L.marker(
+                [12.9567296, 77.7099704],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_eed47190fc4deb90dc1cff6de2dc65a4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_274a20e58a8bfd2e582493630f003357.setIcon(icon_eed47190fc4deb90dc1cff6de2dc65a4);
+        
+    
+        var popup_97ba09ce7342d7547f1991b58b46aafb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5501cb0624235dc364afa3183c0c4a2c = $(`<div id="html_5501cb0624235dc364afa3183c0c4a2c" style="width: 100.0%; height: 100.0%;">Nandini eshoppe</div>`)[0];
+            popup_97ba09ce7342d7547f1991b58b46aafb.setContent(html_5501cb0624235dc364afa3183c0c4a2c);
+        
+
+        marker_274a20e58a8bfd2e582493630f003357.bindPopup(popup_97ba09ce7342d7547f1991b58b46aafb)
+        ;
+
+        
+    
+    
+            var marker_975da35a7d73d1f16ab078641eff0352 = L.marker(
+                [12.9455521, 77.5883664],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_f2cb70ad64f7cef3cf70352c249e7230 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_975da35a7d73d1f16ab078641eff0352.setIcon(icon_f2cb70ad64f7cef3cf70352c249e7230);
+        
+    
+        var popup_a5899bf8836f8586de89f850bc2dcf52 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f6ab1e90a237ef40998bee0f35552df5 = $(`<div id="html_f6ab1e90a237ef40998bee0f35552df5" style="width: 100.0%; height: 100.0%;">KHB Colony Shopping Complex</div>`)[0];
+            popup_a5899bf8836f8586de89f850bc2dcf52.setContent(html_f6ab1e90a237ef40998bee0f35552df5);
+        
+
+        marker_975da35a7d73d1f16ab078641eff0352.bindPopup(popup_a5899bf8836f8586de89f850bc2dcf52)
+        ;
+
+        
+    
+    
+            var marker_4265c6a0c030f17271613e4ff69f73eb = L.marker(
+                [12.9873734, 77.7354793],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_86c0193c7b34ec8df0d5e918fc48700e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_4265c6a0c030f17271613e4ff69f73eb.setIcon(icon_86c0193c7b34ec8df0d5e918fc48700e);
+        
+    
+        var popup_67a68ef404457fecf7e67bddf2f81afa = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cad9fda8703848e120b9317482dbc183 = $(`<div id="html_cad9fda8703848e120b9317482dbc183" style="width: 100.0%; height: 100.0%;">Ascendas ITPL Mall</div>`)[0];
+            popup_67a68ef404457fecf7e67bddf2f81afa.setContent(html_cad9fda8703848e120b9317482dbc183);
+        
+
+        marker_4265c6a0c030f17271613e4ff69f73eb.bindPopup(popup_67a68ef404457fecf7e67bddf2f81afa)
+        ;
+
+        
+    
+    
+            var marker_ac6af1ccfb6779ba5d2a99f0f21d628b = L.marker(
+                [12.9167658, 77.6714026],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_7df871889a59f24486c75ee97d1a1291 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_ac6af1ccfb6779ba5d2a99f0f21d628b.setIcon(icon_7df871889a59f24486c75ee97d1a1291);
+        
+    
+        var popup_bc9dc2e710882e29fc4c7691a775ffa8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8fc2b5920376efdf75877ac3cf1afbe6 = $(`<div id="html_8fc2b5920376efdf75877ac3cf1afbe6" style="width: 100.0%; height: 100.0%;">Total Mall</div>`)[0];
+            popup_bc9dc2e710882e29fc4c7691a775ffa8.setContent(html_8fc2b5920376efdf75877ac3cf1afbe6);
+        
+
+        marker_ac6af1ccfb6779ba5d2a99f0f21d628b.bindPopup(popup_bc9dc2e710882e29fc4c7691a775ffa8)
+        ;
+
+        
+    
+    
+            var marker_7d1514c59061c3effcd0b82a94a12bd2 = L.marker(
+                [12.9883416, 77.734053],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_f83d2c7f923c253c4ccbc909042d4bb8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_7d1514c59061c3effcd0b82a94a12bd2.setIcon(icon_f83d2c7f923c253c4ccbc909042d4bb8);
+        
+    
+        var popup_7cd950e4e1c5e93e1604a783b31e6117 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a5a3eebe8b4dc0375b15abc34ba25ef3 = $(`<div id="html_a5a3eebe8b4dc0375b15abc34ba25ef3" style="width: 100.0%; height: 100.0%;">KIADB Shopping Complex</div>`)[0];
+            popup_7cd950e4e1c5e93e1604a783b31e6117.setContent(html_a5a3eebe8b4dc0375b15abc34ba25ef3);
+        
+
+        marker_7d1514c59061c3effcd0b82a94a12bd2.bindPopup(popup_7cd950e4e1c5e93e1604a783b31e6117)
+        ;
+
+        
+    
+    
+            var marker_dc6c948648ea0de37f64ee5f2649401e = L.marker(
+                [12.8757979, 77.5960039],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_9bc943e34b117db166f021425228e47d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_dc6c948648ea0de37f64ee5f2649401e.setIcon(icon_9bc943e34b117db166f021425228e47d);
+        
+    
+        var popup_861193c68b97a67accd30cc7551e7f84 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f1b982fa55c50d522fdc6405ea05a9e8 = $(`<div id="html_f1b982fa55c50d522fdc6405ea05a9e8" style="width: 100.0%; height: 100.0%;">Royal Meenakshi Mall</div>`)[0];
+            popup_861193c68b97a67accd30cc7551e7f84.setContent(html_f1b982fa55c50d522fdc6405ea05a9e8);
+        
+
+        marker_dc6c948648ea0de37f64ee5f2649401e.bindPopup(popup_861193c68b97a67accd30cc7551e7f84)
+        ;
+
+        
+    
+    
+            var marker_c6b9d341b122b2239fe396ae624e35d7 = L.marker(
+                [13.0715068, 77.5062401],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_57669f34cd12581c946345864fda7201 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_c6b9d341b122b2239fe396ae624e35d7.setIcon(icon_57669f34cd12581c946345864fda7201);
+        
+    
+        var popup_e00003a932e652624efd13e95e1df957 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_30a6c810b419d4b55ea3d9195d4695a7 = $(`<div id="html_30a6c810b419d4b55ea3d9195d4695a7" style="width: 100.0%; height: 100.0%;">LAV KUSH SHOPPING CENTER</div>`)[0];
+            popup_e00003a932e652624efd13e95e1df957.setContent(html_30a6c810b419d4b55ea3d9195d4695a7);
+        
+
+        marker_c6b9d341b122b2239fe396ae624e35d7.bindPopup(popup_e00003a932e652624efd13e95e1df957)
+        ;
+
+        
+    
+    
+            var marker_c4256896dc9854a5f31a15c8f5977948 = L.marker(
+                [12.9817451, 77.5637925],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_31ffec7e46a3524ab9e6db93a0db8716 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_c4256896dc9854a5f31a15c8f5977948.setIcon(icon_31ffec7e46a3524ab9e6db93a0db8716);
+        
+    
+        var popup_7a95ff038561a482f8ba7dcbcb1125f5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e3df9cf0e2b8c4d53b81fbcf63496f29 = $(`<div id="html_e3df9cf0e2b8c4d53b81fbcf63496f29" style="width: 100.0%; height: 100.0%;">Global Malls</div>`)[0];
+            popup_7a95ff038561a482f8ba7dcbcb1125f5.setContent(html_e3df9cf0e2b8c4d53b81fbcf63496f29);
+        
+
+        marker_c4256896dc9854a5f31a15c8f5977948.bindPopup(popup_7a95ff038561a482f8ba7dcbcb1125f5)
+        ;
+
+        
+    
+    
+            var marker_65fe592b0be5a1640dbcf9bb9c6becb9 = L.marker(
+                [12.9716428, 77.5959367],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_b726517dae20ff43f6b52f99ab60c96e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_65fe592b0be5a1640dbcf9bb9c6becb9.setIcon(icon_b726517dae20ff43f6b52f99ab60c96e);
+        
+    
+        var popup_ce4536926e8976c70a68cad98e5e3f6e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3150589450b9749a7758efca3e71dd84 = $(`<div id="html_3150589450b9749a7758efca3e71dd84" style="width: 100.0%; height: 100.0%;">UB City</div>`)[0];
+            popup_ce4536926e8976c70a68cad98e5e3f6e.setContent(html_3150589450b9749a7758efca3e71dd84);
+        
+
+        marker_65fe592b0be5a1640dbcf9bb9c6becb9.bindPopup(popup_ce4536926e8976c70a68cad98e5e3f6e)
+        ;
+
+        
+    
+    
+            var marker_a33a1d0aed330b318e88f85216b01011 = L.marker(
+                [12.9611286, 77.6470963],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_8ec8777e7782a9e045d2d12fba6a1bed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_a33a1d0aed330b318e88f85216b01011.setIcon(icon_8ec8777e7782a9e045d2d12fba6a1bed);
+        
+    
+        var popup_bc7b9f3629b523f82d73db59c51d76a4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_79c098f312605955f5e6301fca6a3b03 = $(`<div id="html_79c098f312605955f5e6301fca6a3b03" style="width: 100.0%; height: 100.0%;">leela fashion (cloth center)</div>`)[0];
+            popup_bc7b9f3629b523f82d73db59c51d76a4.setContent(html_79c098f312605955f5e6301fca6a3b03);
+        
+
+        marker_a33a1d0aed330b318e88f85216b01011.bindPopup(popup_bc7b9f3629b523f82d73db59c51d76a4)
+        ;
+
+        
+    
+    
+            var marker_f5258a828a998f679073a4bd1051b7e7 = L.marker(
+                [12.9566943, 77.7008391],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_cf29e216411a664febdcc5e59c24a182 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_f5258a828a998f679073a4bd1051b7e7.setIcon(icon_cf29e216411a664febdcc5e59c24a182);
+        
+    
+        var popup_31c3b858f1b8989bad1311a5c84fe047 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b0f3fcd6c260dfe80551744dd62e5c03 = $(`<div id="html_b0f3fcd6c260dfe80551744dd62e5c03" style="width: 100.0%; height: 100.0%;">KLM Fashion Mall, Marathahalli</div>`)[0];
+            popup_31c3b858f1b8989bad1311a5c84fe047.setContent(html_b0f3fcd6c260dfe80551744dd62e5c03);
+        
+
+        marker_f5258a828a998f679073a4bd1051b7e7.bindPopup(popup_31c3b858f1b8989bad1311a5c84fe047)
+        ;
+
+        
+    
+    
+            var marker_5b812803cedb6b416824b4e0c2637e72 = L.marker(
+                [12.9735984, 77.6111859],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_23cbb66873381162850a79bcc12b3ba8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_5b812803cedb6b416824b4e0c2637e72.setIcon(icon_23cbb66873381162850a79bcc12b3ba8);
+        
+    
+        var popup_fa537e22061d87522127ae61f3030ec0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_feb919b4d2add1ee91cb19432ed239e3 = $(`<div id="html_feb919b4d2add1ee91cb19432ed239e3" style="width: 100.0%; height: 100.0%;">Central</div>`)[0];
+            popup_fa537e22061d87522127ae61f3030ec0.setContent(html_feb919b4d2add1ee91cb19432ed239e3);
+        
+
+        marker_5b812803cedb6b416824b4e0c2637e72.bindPopup(popup_fa537e22061d87522127ae61f3030ec0)
+        ;
+
+        
+    
+    
+            var marker_9a9c038e1ff500fa6c32066cb02a36e2 = L.marker(
+                [12.8416926, 77.676922],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_82e40296e29001259d12890e1531a607 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_9a9c038e1ff500fa6c32066cb02a36e2.setIcon(icon_82e40296e29001259d12890e1531a607);
+        
+    
+        var popup_039145723eda69f923e75ed01d15d0c5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f8335ee329207433ef253ef827c86a76 = $(`<div id="html_f8335ee329207433ef253ef827c86a76" style="width: 100.0%; height: 100.0%;">M5 Ecity Mall</div>`)[0];
+            popup_039145723eda69f923e75ed01d15d0c5.setContent(html_f8335ee329207433ef253ef827c86a76);
+        
+
+        marker_9a9c038e1ff500fa6c32066cb02a36e2.bindPopup(popup_039145723eda69f923e75ed01d15d0c5)
+        ;
+
+        
+    
+    
+            var marker_2081684733f0f2403d3dc5c3d87ab5b7 = L.marker(
+                [12.8892684, 77.63991],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_d66a5b467815fedc00808310dfa0d398 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_2081684733f0f2403d3dc5c3d87ab5b7.setIcon(icon_d66a5b467815fedc00808310dfa0d398);
+        
+    
+        var popup_68ef38adb82a9e7d4eab15b08b9c6d2c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d866f6a7482b0f44008bd0e8f5da5f4c = $(`<div id="html_d866f6a7482b0f44008bd0e8f5da5f4c" style="width: 100.0%; height: 100.0%;">SHOPPING MALL</div>`)[0];
+            popup_68ef38adb82a9e7d4eab15b08b9c6d2c.setContent(html_d866f6a7482b0f44008bd0e8f5da5f4c);
+        
+
+        marker_2081684733f0f2403d3dc5c3d87ab5b7.bindPopup(popup_68ef38adb82a9e7d4eab15b08b9c6d2c)
+        ;
+
+        
+    
+    
+            var marker_51590c100b5cf51d3ac1420b8a73d508 = L.marker(
+                [13.0694802, 77.5450018],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_49ec96a7fdad8822c811152539cf0f70 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_51590c100b5cf51d3ac1420b8a73d508.setIcon(icon_49ec96a7fdad8822c811152539cf0f70);
+        
+    
+        var popup_23dedc120e38992d3027ece6e0aa259b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_94511c9b3f89b4741493c4c41fe2948c = $(`<div id="html_94511c9b3f89b4741493c4c41fe2948c" style="width: 100.0%; height: 100.0%;">Air Force Akshaya Shopping Center</div>`)[0];
+            popup_23dedc120e38992d3027ece6e0aa259b.setContent(html_94511c9b3f89b4741493c4c41fe2948c);
+        
+
+        marker_51590c100b5cf51d3ac1420b8a73d508.bindPopup(popup_23dedc120e38992d3027ece6e0aa259b)
+        ;
+
+        
+    
+    
+            var marker_53409e3b9c3f94254badd59eb577b5c8 = L.marker(
+                [12.9916302, 77.5711719],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_7d3bee302825bd1e9538abba33aa55e3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_53409e3b9c3f94254badd59eb577b5c8.setIcon(icon_7d3bee302825bd1e9538abba33aa55e3);
+        
+    
+        var popup_21e7b77050fca8ff53fa50296c49a24c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_80d2442eae2a2ab557a8d2980b46dea0 = $(`<div id="html_80d2442eae2a2ab557a8d2980b46dea0" style="width: 100.0%; height: 100.0%;">Mantri Square Mall</div>`)[0];
+            popup_21e7b77050fca8ff53fa50296c49a24c.setContent(html_80d2442eae2a2ab557a8d2980b46dea0);
+        
+
+        marker_53409e3b9c3f94254badd59eb577b5c8.bindPopup(popup_21e7b77050fca8ff53fa50296c49a24c)
+        ;
+
+        
+    
+    
+            var marker_716587ca05fd7e40cc18003f032ba36e = L.marker(
+                [13.0975167, 77.5838725],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_26660f2e54b2f0aaed0b7fa801846720 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_716587ca05fd7e40cc18003f032ba36e.setIcon(icon_26660f2e54b2f0aaed0b7fa801846720);
+        
+    
+        var popup_e3b749010b3e565a20744279d46b9168 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_949b31d1a6949e9d090d74340c9ccfd6 = $(`<div id="html_949b31d1a6949e9d090d74340c9ccfd6" style="width: 100.0%; height: 100.0%;">Garuda Mall</div>`)[0];
+            popup_e3b749010b3e565a20744279d46b9168.setContent(html_949b31d1a6949e9d090d74340c9ccfd6);
+        
+
+        marker_716587ca05fd7e40cc18003f032ba36e.bindPopup(popup_e3b749010b3e565a20744279d46b9168)
+        ;
+
+        
+    
+    
+            var marker_313368b64e1a6d2a53cd51209f25043d = L.marker(
+                [13.0416076, 77.59485],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_a64288b8c5a52f168f7a35234a283cff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_313368b64e1a6d2a53cd51209f25043d.setIcon(icon_a64288b8c5a52f168f7a35234a283cff);
+        
+    
+        var popup_0048a8647db9216db38fe5510c3d932f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6c65a5b08dda5cb4b0f7f53402c76980 = $(`<div id="html_6c65a5b08dda5cb4b0f7f53402c76980" style="width: 100.0%; height: 100.0%;">City Centre</div>`)[0];
+            popup_0048a8647db9216db38fe5510c3d932f.setContent(html_6c65a5b08dda5cb4b0f7f53402c76980);
+        
+
+        marker_313368b64e1a6d2a53cd51209f25043d.bindPopup(popup_0048a8647db9216db38fe5510c3d932f)
+        ;
+
+        
+    
+    
+            var marker_d23a4d1fe524e8b1dbb30b7e0d76f06a = L.marker(
+                [12.9589133, 77.656891],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_8ba199a3ebe9a405165d18afdb9b3a96 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_d23a4d1fe524e8b1dbb30b7e0d76f06a.setIcon(icon_8ba199a3ebe9a405165d18afdb9b3a96);
+        
+    
+        var popup_46a4a3967591d5cfa18628f2c2c3955c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1ff18ef1f04f5a8216a8f4f6f3f8af4a = $(`<div id="html_1ff18ef1f04f5a8216a8f4f6f3f8af4a" style="width: 100.0%; height: 100.0%;">Kemp Fort Mall</div>`)[0];
+            popup_46a4a3967591d5cfa18628f2c2c3955c.setContent(html_1ff18ef1f04f5a8216a8f4f6f3f8af4a);
+        
+
+        marker_d23a4d1fe524e8b1dbb30b7e0d76f06a.bindPopup(popup_46a4a3967591d5cfa18628f2c2c3955c)
+        ;
+
+        
+    
+    
+            map_c5ab774b26ae5b180ef332edcf751c57.fitBounds(
+                [[12.8416926, 77.5062401], [13.0983706, 77.7479488]],
+                {}
+            );
+        
+    
+            var marker_c541fa8424d30060d0112e42073179ad = L.marker(
+                [12.9384348, 77.5216242],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_37a8910fdf8468e44e435782586984f4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_c541fa8424d30060d0112e42073179ad.setIcon(icon_37a8910fdf8468e44e435782586984f4);
+        
+    
+        var popup_fe78cf6e1beeb4bf3029c3d53b68e1dc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e6e813a42ab162d8e6982c3773daffad = $(`<div id="html_e6e813a42ab162d8e6982c3773daffad" style="width: 100.0%; height: 100.0%;">Latha Prasad Fuel Station</div>`)[0];
+            popup_fe78cf6e1beeb4bf3029c3d53b68e1dc.setContent(html_e6e813a42ab162d8e6982c3773daffad);
+        
+
+        marker_c541fa8424d30060d0112e42073179ad.bindPopup(popup_fe78cf6e1beeb4bf3029c3d53b68e1dc)
+        ;
+
+        
+    
+    
+            var marker_1f0bc9a79740246b257ea19ba5f9c139 = L.marker(
+                [12.9235688, 77.6025296],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_ab4ca87036da6c9daf0e5011f36d43e5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_1f0bc9a79740246b257ea19ba5f9c139.setIcon(icon_ab4ca87036da6c9daf0e5011f36d43e5);
+        
+    
+        var popup_2cebeaa593b55e638e42648e3f285f19 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_068e3deb52e68b9af2de1b25f9981868 = $(`<div id="html_068e3deb52e68b9af2de1b25f9981868" style="width: 100.0%; height: 100.0%;">Total Gas Pump</div>`)[0];
+            popup_2cebeaa593b55e638e42648e3f285f19.setContent(html_068e3deb52e68b9af2de1b25f9981868);
+        
+
+        marker_1f0bc9a79740246b257ea19ba5f9c139.bindPopup(popup_2cebeaa593b55e638e42648e3f285f19)
+        ;
+
+        
+    
+    
+            var marker_36fafdfeb9b98f0d9ad093f628c17b2a = L.marker(
+                [13.0142589, 77.7097773],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_923eba9c33f72eb7edf5ac354a872d38 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_36fafdfeb9b98f0d9ad093f628c17b2a.setIcon(icon_923eba9c33f72eb7edf5ac354a872d38);
+        
+    
+        var popup_bd473cfaa68d625e5214e5e1cec27e3f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b4c899ff6ea62c2a4596f22344485182 = $(`<div id="html_b4c899ff6ea62c2a4596f22344485182" style="width: 100.0%; height: 100.0%;">Nayara Energy Fuel Station</div>`)[0];
+            popup_bd473cfaa68d625e5214e5e1cec27e3f.setContent(html_b4c899ff6ea62c2a4596f22344485182);
+        
+
+        marker_36fafdfeb9b98f0d9ad093f628c17b2a.bindPopup(popup_bd473cfaa68d625e5214e5e1cec27e3f)
+        ;
+
+        
+    
+    
+            var marker_6c265ea9c6a4caea10fed37e6351d5a3 = L.marker(
+                [12.986323, 77.5220147],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_a75cbfb84a35ca88b4874b7cc6fb0ba3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_6c265ea9c6a4caea10fed37e6351d5a3.setIcon(icon_a75cbfb84a35ca88b4874b7cc6fb0ba3);
+        
+    
+        var popup_d4c47402660aeb28877220ff84070b12 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9336f8e964d99ed215fe541b5365b253 = $(`<div id="html_9336f8e964d99ed215fe541b5365b253" style="width: 100.0%; height: 100.0%;">Total Gas Station</div>`)[0];
+            popup_d4c47402660aeb28877220ff84070b12.setContent(html_9336f8e964d99ed215fe541b5365b253);
+        
+
+        marker_6c265ea9c6a4caea10fed37e6351d5a3.bindPopup(popup_d4c47402660aeb28877220ff84070b12)
+        ;
+
+        
+    
+    
+            var marker_b57e71d9a3987f02096d973d9c41e86e = L.marker(
+                [12.9087243, 77.4873264],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_5a719b2b29043672190aa543e44d0529 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_b57e71d9a3987f02096d973d9c41e86e.setIcon(icon_5a719b2b29043672190aa543e44d0529);
+        
+    
+        var popup_e341504d428caa11fc8b6807b1b46268 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_94a84362add6a24ebbe4d262251b5d6e = $(`<div id="html_94a84362add6a24ebbe4d262251b5d6e" style="width: 100.0%; height: 100.0%;">V R Filling Station</div>`)[0];
+            popup_e341504d428caa11fc8b6807b1b46268.setContent(html_94a84362add6a24ebbe4d262251b5d6e);
+        
+
+        marker_b57e71d9a3987f02096d973d9c41e86e.bindPopup(popup_e341504d428caa11fc8b6807b1b46268)
+        ;
+
+        
+    
+    
+            var marker_2b7624eca8d12bfbb8148be530467ce8 = L.marker(
+                [12.8557634, 77.6633178],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_f3c126f2ec67acdd851156547add8862 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_2b7624eca8d12bfbb8148be530467ce8.setIcon(icon_f3c126f2ec67acdd851156547add8862);
+        
+    
+        var popup_6e43a2d40182c53757ab31520a457615 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6930aed99802f3434e6769123ada4e56 = $(`<div id="html_6930aed99802f3434e6769123ada4e56" style="width: 100.0%; height: 100.0%;">SUDARSHAN FUEL STATION</div>`)[0];
+            popup_6e43a2d40182c53757ab31520a457615.setContent(html_6930aed99802f3434e6769123ada4e56);
+        
+
+        marker_2b7624eca8d12bfbb8148be530467ce8.bindPopup(popup_6e43a2d40182c53757ab31520a457615)
+        ;
+
+        
+    
+    
+            var marker_96715801d819232e13ed6d787cc65691 = L.marker(
+                [13.0323722, 77.6599652],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_cc8a2635638bbaefbe96d7f10a21bcbf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_96715801d819232e13ed6d787cc65691.setIcon(icon_cc8a2635638bbaefbe96d7f10a21bcbf);
+        
+    
+        var popup_080e00a99fc0e6f3e80429e01017f126 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6b5cfdedc502554a588e234f5336c710 = $(`<div id="html_6b5cfdedc502554a588e234f5336c710" style="width: 100.0%; height: 100.0%;">GOWRISHANKAR FUEL STATION</div>`)[0];
+            popup_080e00a99fc0e6f3e80429e01017f126.setContent(html_6b5cfdedc502554a588e234f5336c710);
+        
+
+        marker_96715801d819232e13ed6d787cc65691.bindPopup(popup_080e00a99fc0e6f3e80429e01017f126)
+        ;
+
+        
+    
+    
+            var marker_0a0ddee3849266ac009e6cfd237442bc = L.marker(
+                [12.9324889, 77.5161326],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_f75a3ecbec97369a5a748594f503b8dd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_0a0ddee3849266ac009e6cfd237442bc.setIcon(icon_f75a3ecbec97369a5a748594f503b8dd);
+        
+    
+        var popup_ad87284579dad34ca147d39323f73cde = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6c9b46f5f207e1d2ab71bd9b86306717 = $(`<div id="html_6c9b46f5f207e1d2ab71bd9b86306717" style="width: 100.0%; height: 100.0%;">RR FUEL STATION</div>`)[0];
+            popup_ad87284579dad34ca147d39323f73cde.setContent(html_6c9b46f5f207e1d2ab71bd9b86306717);
+        
+
+        marker_0a0ddee3849266ac009e6cfd237442bc.bindPopup(popup_ad87284579dad34ca147d39323f73cde)
+        ;
+
+        
+    
+    
+            var marker_4cde641fb41c3aae6b61bc5888044030 = L.marker(
+                [13.0079882, 77.5460463],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_3be670c309c3e0b0dadd8897f0f7015c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_4cde641fb41c3aae6b61bc5888044030.setIcon(icon_3be670c309c3e0b0dadd8897f0f7015c);
+        
+    
+        var popup_2c81b2a87ce3f10722333ee4b6c848d3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_eead0d3ba94bc83ef7f9cbb36c0a3a22 = $(`<div id="html_eead0d3ba94bc83ef7f9cbb36c0a3a22" style="width: 100.0%; height: 100.0%;">SRI RANGA FILLING STATION</div>`)[0];
+            popup_2c81b2a87ce3f10722333ee4b6c848d3.setContent(html_eead0d3ba94bc83ef7f9cbb36c0a3a22);
+        
+
+        marker_4cde641fb41c3aae6b61bc5888044030.bindPopup(popup_2c81b2a87ce3f10722333ee4b6c848d3)
+        ;
+
+        
+    
+    
+            var marker_f2cbe6b0a77f81e0aeede5f3dd94e3f2 = L.marker(
+                [12.9242855, 77.6145204],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_8d52fe21305dec95e66771e771c4982e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_f2cbe6b0a77f81e0aeede5f3dd94e3f2.setIcon(icon_8d52fe21305dec95e66771e771c4982e);
+        
+    
+        var popup_6a6c084e764d54dad19a494de09df2e7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_462e1582b533e582f49b3ebd403d6026 = $(`<div id="html_462e1582b533e582f49b3ebd403d6026" style="width: 100.0%; height: 100.0%;">SUPERGAS Auto LPG Station - Sapthagiri Enterprises</div>`)[0];
+            popup_6a6c084e764d54dad19a494de09df2e7.setContent(html_462e1582b533e582f49b3ebd403d6026);
+        
+
+        marker_f2cbe6b0a77f81e0aeede5f3dd94e3f2.bindPopup(popup_6a6c084e764d54dad19a494de09df2e7)
+        ;
+
+        
+    
+    
+            var marker_0801752b824c20166ddeb2e0d6d24edf = L.marker(
+                [12.9575984, 77.5591493],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_8a77a3659cd0bedf9208f26f5e064897 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_0801752b824c20166ddeb2e0d6d24edf.setIcon(icon_8a77a3659cd0bedf9208f26f5e064897);
+        
+    
+        var popup_d0e5c8c9e79d75b59327ee3230b46526 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9557aa989a629a5fa93b9dc95fdc2b7b = $(`<div id="html_9557aa989a629a5fa93b9dc95fdc2b7b" style="width: 100.0%; height: 100.0%;">Omkara Fuel Station - Nayara Energy</div>`)[0];
+            popup_d0e5c8c9e79d75b59327ee3230b46526.setContent(html_9557aa989a629a5fa93b9dc95fdc2b7b);
+        
+
+        marker_0801752b824c20166ddeb2e0d6d24edf.bindPopup(popup_d0e5c8c9e79d75b59327ee3230b46526)
+        ;
+
+        
+    
+    
+            var marker_086f54dc1127c927a372abee402a5432 = L.marker(
+                [13.1891995, 77.6453767],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_5231a440261193d2241e486c4abba528 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_086f54dc1127c927a372abee402a5432.setIcon(icon_5231a440261193d2241e486c4abba528);
+        
+    
+        var popup_4667001e00d2102796cda31eefa62d84 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9f2c72bd94000d8bf2b0759f7d2dd4d4 = $(`<div id="html_9f2c72bd94000d8bf2b0759f7d2dd4d4" style="width: 100.0%; height: 100.0%;">G K Filling Station</div>`)[0];
+            popup_4667001e00d2102796cda31eefa62d84.setContent(html_9f2c72bd94000d8bf2b0759f7d2dd4d4);
+        
+
+        marker_086f54dc1127c927a372abee402a5432.bindPopup(popup_4667001e00d2102796cda31eefa62d84)
+        ;
+
+        
+    
+    
+            var marker_44380e9b7a73779268a7b72bdb640558 = L.marker(
+                [13.1060453, 77.601109],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_77b7543187906cafd99bd95648c44232 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_44380e9b7a73779268a7b72bdb640558.setIcon(icon_77b7543187906cafd99bd95648c44232);
+        
+    
+        var popup_671b944259c310909bf0762958505c13 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4ff46f0c44ae5f43d19dc975ce020945 = $(`<div id="html_4ff46f0c44ae5f43d19dc975ce020945" style="width: 100.0%; height: 100.0%;">Sapthagiri Service Station</div>`)[0];
+            popup_671b944259c310909bf0762958505c13.setContent(html_4ff46f0c44ae5f43d19dc975ce020945);
+        
+
+        marker_44380e9b7a73779268a7b72bdb640558.bindPopup(popup_671b944259c310909bf0762958505c13)
+        ;
+
+        
+    
+    
+            var marker_3b0aae4e81579e4d8d95f73bc9db1548 = L.marker(
+                [12.8917417, 77.5774291],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_2c2d733bb9fc46a2de64305ec1315975 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_3b0aae4e81579e4d8d95f73bc9db1548.setIcon(icon_2c2d733bb9fc46a2de64305ec1315975);
+        
+    
+        var popup_f378f674d78ac8d84c8e01757abf94c6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_442182049e93ff698df9ba2409505045 = $(`<div id="html_442182049e93ff698df9ba2409505045" style="width: 100.0%; height: 100.0%;">Patel Fuel Station</div>`)[0];
+            popup_f378f674d78ac8d84c8e01757abf94c6.setContent(html_442182049e93ff698df9ba2409505045);
+        
+
+        marker_3b0aae4e81579e4d8d95f73bc9db1548.bindPopup(popup_f378f674d78ac8d84c8e01757abf94c6)
+        ;
+
+        
+    
+    
+            var marker_c15a20599d3ef8bfd5a703c0e9774d35 = L.marker(
+                [12.877108, 77.5185268],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_4aff08429ec37d26849ce612b13ea55a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_c15a20599d3ef8bfd5a703c0e9774d35.setIcon(icon_4aff08429ec37d26849ce612b13ea55a);
+        
+    
+        var popup_ac791e5ea39620650a7bed5c25c32924 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ebc2bf03ad72006bfb3541fab9630467 = $(`<div id="html_ebc2bf03ad72006bfb3541fab9630467" style="width: 100.0%; height: 100.0%;">VN fuel Station (Bharath Petroleum)</div>`)[0];
+            popup_ac791e5ea39620650a7bed5c25c32924.setContent(html_ebc2bf03ad72006bfb3541fab9630467);
+        
+
+        marker_c15a20599d3ef8bfd5a703c0e9774d35.bindPopup(popup_ac791e5ea39620650a7bed5c25c32924)
+        ;
+
+        
+    
+    
+            var marker_6df307229014b5f63fbc6fc08a396560 = L.marker(
+                [12.8834998, 77.6428832],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_dc01299945daec280a178c6176b2339e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_6df307229014b5f63fbc6fc08a396560.setIcon(icon_dc01299945daec280a178c6176b2339e);
+        
+    
+        var popup_643e3688a2996529eddeb135a67037bc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6df1c0046d7396c10ec5a3ddd9628c99 = $(`<div id="html_6df1c0046d7396c10ec5a3ddd9628c99" style="width: 100.0%; height: 100.0%;">Shell petrol pump</div>`)[0];
+            popup_643e3688a2996529eddeb135a67037bc.setContent(html_6df1c0046d7396c10ec5a3ddd9628c99);
+        
+
+        marker_6df307229014b5f63fbc6fc08a396560.bindPopup(popup_643e3688a2996529eddeb135a67037bc)
+        ;
+
+        
+    
+    
+            var marker_23dde6467e224a4938cf19f27bec4462 = L.marker(
+                [12.9209585, 77.5694038],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_e5b24d0e01cec827157db555abd19259 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_23dde6467e224a4938cf19f27bec4462.setIcon(icon_e5b24d0e01cec827157db555abd19259);
+        
+    
+        var popup_2c4456037356fbbfe6f8f8fde9495515 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7570db7739dee2a2a69bf0b093fd3837 = $(`<div id="html_7570db7739dee2a2a69bf0b093fd3837" style="width: 100.0%; height: 100.0%;">KRJ Fuel station</div>`)[0];
+            popup_2c4456037356fbbfe6f8f8fde9495515.setContent(html_7570db7739dee2a2a69bf0b093fd3837);
+        
+
+        marker_23dde6467e224a4938cf19f27bec4462.bindPopup(popup_2c4456037356fbbfe6f8f8fde9495515)
+        ;
+
+        
+    
+    
+            var marker_cf60b0c1dfb0b4a2e85e81297916760a = L.marker(
+                [13.069516, 77.5629442],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_e16ce766f11cbd2b5c41288a2873dbbc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_cf60b0c1dfb0b4a2e85e81297916760a.setIcon(icon_e16ce766f11cbd2b5c41288a2873dbbc);
+        
+    
+        var popup_a9570debf5f0033fcfbd209b48a7d034 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0caabb135be9a36d6f278c8ad226a6db = $(`<div id="html_0caabb135be9a36d6f278c8ad226a6db" style="width: 100.0%; height: 100.0%;">Suraksha Fuel Station</div>`)[0];
+            popup_a9570debf5f0033fcfbd209b48a7d034.setContent(html_0caabb135be9a36d6f278c8ad226a6db);
+        
+
+        marker_cf60b0c1dfb0b4a2e85e81297916760a.bindPopup(popup_a9570debf5f0033fcfbd209b48a7d034)
+        ;
+
+        
+    
+    
+            var marker_55c9166dc4f98d6f09858b789bc67c47 = L.marker(
+                [12.8621086, 77.614571],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_0019a1376810102194535aee3a1bf52b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_55c9166dc4f98d6f09858b789bc67c47.setIcon(icon_0019a1376810102194535aee3a1bf52b);
+        
+    
+        var popup_36ccbfc3f7196cc7ac00621114fcc464 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_466a282fb7c172534f52aedfcab3e20f = $(`<div id="html_466a282fb7c172534f52aedfcab3e20f" style="width: 100.0%; height: 100.0%;">Indian oil petroleum fuel station Gokul Fuels</div>`)[0];
+            popup_36ccbfc3f7196cc7ac00621114fcc464.setContent(html_466a282fb7c172534f52aedfcab3e20f);
+        
+
+        marker_55c9166dc4f98d6f09858b789bc67c47.bindPopup(popup_36ccbfc3f7196cc7ac00621114fcc464)
+        ;
+
+        
+    
+    
+            var marker_2b77dc4011232ee630002bd84d07fb58 = L.marker(
+                [13.062588, 77.4946837],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_07efc06d23b07710d707b58ba265040e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_2b77dc4011232ee630002bd84d07fb58.setIcon(icon_07efc06d23b07710d707b58ba265040e);
+        
+    
+        var popup_b2526ef42bb52b9190f398e456ba66ca = L.popup({"maxWidth": "100%"});
+
+        
+            var html_81e5d0ff16910da3d43109cd6b8afa0b = $(`<div id="html_81e5d0ff16910da3d43109cd6b8afa0b" style="width: 100.0%; height: 100.0%;">Indian Oil - NMH Gasoline Station</div>`)[0];
+            popup_b2526ef42bb52b9190f398e456ba66ca.setContent(html_81e5d0ff16910da3d43109cd6b8afa0b);
+        
+
+        marker_2b77dc4011232ee630002bd84d07fb58.bindPopup(popup_b2526ef42bb52b9190f398e456ba66ca)
+        ;
+
+        
+    
+    
+            var marker_64389437bb74d7c7e90dc33539b44d52 = L.marker(
+                [13.0489603, 77.50791],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_b7a738b5ee450bcfd8a57c838e8f7739 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_64389437bb74d7c7e90dc33539b44d52.setIcon(icon_b7a738b5ee450bcfd8a57c838e8f7739);
+        
+    
+        var popup_7c4e805a97695dccc7f3d38c613760ca = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4ad5bc3537f05a348c6f42a6ff60476e = $(`<div id="html_4ad5bc3537f05a348c6f42a6ff60476e" style="width: 100.0%; height: 100.0%;">Ganga auto gas</div>`)[0];
+            popup_7c4e805a97695dccc7f3d38c613760ca.setContent(html_4ad5bc3537f05a348c6f42a6ff60476e);
+        
+
+        marker_64389437bb74d7c7e90dc33539b44d52.bindPopup(popup_7c4e805a97695dccc7f3d38c613760ca)
+        ;
+
+        
+    
+    
+            var marker_44402c7a0892b13e610670096b923a73 = L.marker(
+                [12.9764699, 77.522162],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_dec0e154c9e1734939ca1aab981fc256 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_44402c7a0892b13e610670096b923a73.setIcon(icon_dec0e154c9e1734939ca1aab981fc256);
+        
+    
+        var popup_47ae6880184a62522c03299c318a2f99 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dffdcf71bad64eb8b0cff15f00051cb3 = $(`<div id="html_dffdcf71bad64eb8b0cff15f00051cb3" style="width: 100.0%; height: 100.0%;">Hindustan Petroleum Corporation Limited</div>`)[0];
+            popup_47ae6880184a62522c03299c318a2f99.setContent(html_dffdcf71bad64eb8b0cff15f00051cb3);
+        
+
+        marker_44402c7a0892b13e610670096b923a73.bindPopup(popup_47ae6880184a62522c03299c318a2f99)
+        ;
+
+        
+    
+    
+            var marker_4eddb74ab4fe3ad5637ba96521953bcd = L.marker(
+                [12.8755956, 77.5345075],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_875e174e8c14775862174d14e768fc43 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_4eddb74ab4fe3ad5637ba96521953bcd.setIcon(icon_875e174e8c14775862174d14e768fc43);
+        
+    
+        var popup_a6a7a0879ed62619babbaaa72006f8ce = L.popup({"maxWidth": "100%"});
+
+        
+            var html_30c7d1bc877230de5fc010b9f4650f53 = $(`<div id="html_30c7d1bc877230de5fc010b9f4650f53" style="width: 100.0%; height: 100.0%;">Shreekara Fuel Station Indian Oil petrol station</div>`)[0];
+            popup_a6a7a0879ed62619babbaaa72006f8ce.setContent(html_30c7d1bc877230de5fc010b9f4650f53);
+        
+
+        marker_4eddb74ab4fe3ad5637ba96521953bcd.bindPopup(popup_a6a7a0879ed62619babbaaa72006f8ce)
+        ;
+
+        
+    
+    
+            var marker_c3dbe93e95a1257b87263b59b1092d19 = L.marker(
+                [12.985092, 77.523238],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_d4e779a442ded2144276a28b3997f019 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_c3dbe93e95a1257b87263b59b1092d19.setIcon(icon_d4e779a442ded2144276a28b3997f019);
+        
+    
+        var popup_01f6692308e10220bb1020a077b18ca2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ed45a1656c9816a0aaf9828c173dcc5d = $(`<div id="html_ed45a1656c9816a0aaf9828c173dcc5d" style="width: 100.0%; height: 100.0%;">Indo Autogas & Fuel Station</div>`)[0];
+            popup_01f6692308e10220bb1020a077b18ca2.setContent(html_ed45a1656c9816a0aaf9828c173dcc5d);
+        
+
+        marker_c3dbe93e95a1257b87263b59b1092d19.bindPopup(popup_01f6692308e10220bb1020a077b18ca2)
+        ;
+
+        
+    
+    
+            var marker_3ab497f9b29ee5759778db91a91505ed = L.marker(
+                [12.9736257, 77.6138383],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_67ec9943b5c04ab00d45803803b50285 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_3ab497f9b29ee5759778db91a91505ed.setIcon(icon_67ec9943b5c04ab00d45803803b50285);
+        
+    
+        var popup_78702538fa8776ac04874cf33d591dd3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1965193c9ab15a703a62ab5da26ed272 = $(`<div id="html_1965193c9ab15a703a62ab5da26ed272" style="width: 100.0%; height: 100.0%;">Nikhil Filling Station</div>`)[0];
+            popup_78702538fa8776ac04874cf33d591dd3.setContent(html_1965193c9ab15a703a62ab5da26ed272);
+        
+
+        marker_3ab497f9b29ee5759778db91a91505ed.bindPopup(popup_78702538fa8776ac04874cf33d591dd3)
+        ;
+
+        
+    
+    
+            var marker_2ac95723d374634a0cfc6de101b027ab = L.marker(
+                [12.945247, 77.6189983],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_effc6835eaecb6bca6fe215129b7a03b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_2ac95723d374634a0cfc6de101b027ab.setIcon(icon_effc6835eaecb6bca6fe215129b7a03b);
+        
+    
+        var popup_c2bdbae035b44d2fa4bd34fbde0459f5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a031ec14793eec9b6ceff93cacda1645 = $(`<div id="html_a031ec14793eec9b6ceff93cacda1645" style="width: 100.0%; height: 100.0%;">Auto LPG Gas Station</div>`)[0];
+            popup_c2bdbae035b44d2fa4bd34fbde0459f5.setContent(html_a031ec14793eec9b6ceff93cacda1645);
+        
+
+        marker_2ac95723d374634a0cfc6de101b027ab.bindPopup(popup_c2bdbae035b44d2fa4bd34fbde0459f5)
+        ;
+
+        
+    
+    
+            var marker_994a885cc304ab973992ef1a73cb6424 = L.marker(
+                [13.0661148, 77.5303584],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_6c571dad6869b172804d1fbb75d51b01 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_994a885cc304ab973992ef1a73cb6424.setIcon(icon_6c571dad6869b172804d1fbb75d51b01);
+        
+    
+        var popup_bc679f2cc1558e78bdacb350b9a627dc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9816f3499bd638c3974ad8f6cd3b3e79 = $(`<div id="html_9816f3499bd638c3974ad8f6cd3b3e79" style="width: 100.0%; height: 100.0%;">Vijayashree Filling Station</div>`)[0];
+            popup_bc679f2cc1558e78bdacb350b9a627dc.setContent(html_9816f3499bd638c3974ad8f6cd3b3e79);
+        
+
+        marker_994a885cc304ab973992ef1a73cb6424.bindPopup(popup_bc679f2cc1558e78bdacb350b9a627dc)
+        ;
+
+        
+    
+    
+            var marker_27646d4e2424e8c502f8ede78fdab017 = L.marker(
+                [12.8269596, 77.5593322],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_a62135fe6dac4ab86d97c5e40d27542e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_27646d4e2424e8c502f8ede78fdab017.setIcon(icon_a62135fe6dac4ab86d97c5e40d27542e);
+        
+    
+        var popup_54fa1a1f708eb71cec6008e2531fd2e1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_de3a8b544f5be8215eaeaa97d4f05e35 = $(`<div id="html_de3a8b544f5be8215eaeaa97d4f05e35" style="width: 100.0%; height: 100.0%;">Uday Fuel station</div>`)[0];
+            popup_54fa1a1f708eb71cec6008e2531fd2e1.setContent(html_de3a8b544f5be8215eaeaa97d4f05e35);
+        
+
+        marker_27646d4e2424e8c502f8ede78fdab017.bindPopup(popup_54fa1a1f708eb71cec6008e2531fd2e1)
+        ;
+
+        
+    
+    
+            var marker_b8b9d7c3913d0f1dd93db7d3dcdcdc0d = L.marker(
+                [12.8616705, 77.5804106],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_443733c0943bcee110e7a4e3cbcf69cf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_b8b9d7c3913d0f1dd93db7d3dcdcdc0d.setIcon(icon_443733c0943bcee110e7a4e3cbcf69cf);
+        
+    
+        var popup_253ecc205d813463db32454aef6f1346 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c7b46080a0e55dad5fdc79578384abfc = $(`<div id="html_c7b46080a0e55dad5fdc79578384abfc" style="width: 100.0%; height: 100.0%;">JRB Fuel Junction</div>`)[0];
+            popup_253ecc205d813463db32454aef6f1346.setContent(html_c7b46080a0e55dad5fdc79578384abfc);
+        
+
+        marker_b8b9d7c3913d0f1dd93db7d3dcdcdc0d.bindPopup(popup_253ecc205d813463db32454aef6f1346)
+        ;
+
+        
+    
+    
+            var marker_ca5ed8044188c875acd101138199e0a1 = L.marker(
+                [13.0977477, 77.5637522],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_26d52051de219a542c66624b7ddda66c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_ca5ed8044188c875acd101138199e0a1.setIcon(icon_26d52051de219a542c66624b7ddda66c);
+        
+    
+        var popup_268d6646f4bb85c66d9072d413d74d2c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f34425761e638db0305633d82ae97eb0 = $(`<div id="html_f34425761e638db0305633d82ae97eb0" style="width: 100.0%; height: 100.0%;">Sri Annapoorneshwari Fuel Station</div>`)[0];
+            popup_268d6646f4bb85c66d9072d413d74d2c.setContent(html_f34425761e638db0305633d82ae97eb0);
+        
+
+        marker_ca5ed8044188c875acd101138199e0a1.bindPopup(popup_268d6646f4bb85c66d9072d413d74d2c)
+        ;
+
+        
+    
+    
+            var marker_2e3107fa213f7bd1436612692f468aef = L.marker(
+                [12.9907483, 77.7220513],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_7dc369e4e14dcfaf70d4dd1e5ec945f9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_2e3107fa213f7bd1436612692f468aef.setIcon(icon_7dc369e4e14dcfaf70d4dd1e5ec945f9);
+        
+    
+        var popup_b32bdb46f30699bda581cdf3aa526abd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5a451481a54b6295cc562ec59b997c45 = $(`<div id="html_5a451481a54b6295cc562ec59b997c45" style="width: 100.0%; height: 100.0%;">Vikhyaath Filling Station</div>`)[0];
+            popup_b32bdb46f30699bda581cdf3aa526abd.setContent(html_5a451481a54b6295cc562ec59b997c45);
+        
+
+        marker_2e3107fa213f7bd1436612692f468aef.bindPopup(popup_b32bdb46f30699bda581cdf3aa526abd)
+        ;
+
+        
+    
+    
+            var marker_ee4ea649af5061f52f7222072059760d = L.marker(
+                [12.8646158, 77.7701949],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_35ad9480ff664589a7e1582055f55f89 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_ee4ea649af5061f52f7222072059760d.setIcon(icon_35ad9480ff664589a7e1582055f55f89);
+        
+    
+        var popup_2a3638541747d24bb7f0957c7a376769 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a1e77606c7f16c924ea1ce35fb39b77a = $(`<div id="html_a1e77606c7f16c924ea1ce35fb39b77a" style="width: 100.0%; height: 100.0%;">Hindustan Petroleum Corporation Limited - Sompura Service Station</div>`)[0];
+            popup_2a3638541747d24bb7f0957c7a376769.setContent(html_a1e77606c7f16c924ea1ce35fb39b77a);
+        
+
+        marker_ee4ea649af5061f52f7222072059760d.bindPopup(popup_2a3638541747d24bb7f0957c7a376769)
+        ;
+
+        
+    
+    
+            var marker_47a1a22c98da7298569aa1f8d997ffe3 = L.marker(
+                [12.9924896, 77.7126209],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_d98aa6b587addcededaf0da24ae9d4ef = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_47a1a22c98da7298569aa1f8d997ffe3.setIcon(icon_d98aa6b587addcededaf0da24ae9d4ef);
+        
+    
+        var popup_0f4d784ddd58a19a47dc4c5040ee4cec = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ff7ef410db7ccd8d84fc2848b2c174f5 = $(`<div id="html_ff7ef410db7ccd8d84fc2848b2c174f5" style="width: 100.0%; height: 100.0%;">Uddi gas pump</div>`)[0];
+            popup_0f4d784ddd58a19a47dc4c5040ee4cec.setContent(html_ff7ef410db7ccd8d84fc2848b2c174f5);
+        
+
+        marker_47a1a22c98da7298569aa1f8d997ffe3.bindPopup(popup_0f4d784ddd58a19a47dc4c5040ee4cec)
+        ;
+
+        
+    
+    
+            var marker_bef3ed64edbb8d5ae3be930f1bfe2b01 = L.marker(
+                [13.0213098, 77.6005541],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_87966a9ec44677358f9cacd9ed157d69 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_bef3ed64edbb8d5ae3be930f1bfe2b01.setIcon(icon_87966a9ec44677358f9cacd9ed157d69);
+        
+    
+        var popup_22f69c6a710af71e825779e9ff02534a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b7c7cb8967a495fb9785ab2d04617ad1 = $(`<div id="html_b7c7cb8967a495fb9785ab2d04617ad1" style="width: 100.0%; height: 100.0%;">IOC AUTO GAS & DIESEL STATION</div>`)[0];
+            popup_22f69c6a710af71e825779e9ff02534a.setContent(html_b7c7cb8967a495fb9785ab2d04617ad1);
+        
+
+        marker_bef3ed64edbb8d5ae3be930f1bfe2b01.bindPopup(popup_22f69c6a710af71e825779e9ff02534a)
+        ;
+
+        
+    
+    
+            var marker_025189f0b691957d21af3c8c3625f986 = L.marker(
+                [13.0095328, 77.4830283],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_d59f2aa2f94344559333d14b5069c3cf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_025189f0b691957d21af3c8c3625f986.setIcon(icon_d59f2aa2f94344559333d14b5069c3cf);
+        
+    
+        var popup_77b0f1390d46276c297607fbeb2cecc1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6ebb9a3c3306b1e0712526bb2c2f5853 = $(`<div id="html_6ebb9a3c3306b1e0712526bb2c2f5853" style="width: 100.0%; height: 100.0%;">BPCL - Manjunatha Fuel station</div>`)[0];
+            popup_77b0f1390d46276c297607fbeb2cecc1.setContent(html_6ebb9a3c3306b1e0712526bb2c2f5853);
+        
+
+        marker_025189f0b691957d21af3c8c3625f986.bindPopup(popup_77b0f1390d46276c297607fbeb2cecc1)
+        ;
+
+        
+    
+    
+            var marker_386b1e50661f73e8ba772646cbfb9060 = L.marker(
+                [12.9304696, 77.5538701],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_212a46849bd409e312423c92b2d266e1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_386b1e50661f73e8ba772646cbfb9060.setIcon(icon_212a46849bd409e312423c92b2d266e1);
+        
+    
+        var popup_a00daa4b85dc3cdf7bd50eccc6c551b7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1cdd44859fa3be63dc9cfa9b07bbf809 = $(`<div id="html_1cdd44859fa3be63dc9cfa9b07bbf809" style="width: 100.0%; height: 100.0%;">Panchamukhi Nayara Fuel Station</div>`)[0];
+            popup_a00daa4b85dc3cdf7bd50eccc6c551b7.setContent(html_1cdd44859fa3be63dc9cfa9b07bbf809);
+        
+
+        marker_386b1e50661f73e8ba772646cbfb9060.bindPopup(popup_a00daa4b85dc3cdf7bd50eccc6c551b7)
+        ;
+
+        
+    
+    
+            var marker_b8edbb8a144d785ab0e0f965567ab5f9 = L.marker(
+                [12.698218, 77.7560783],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_cfbecd1124624f94f886e3ca4a9f499a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_b8edbb8a144d785ab0e0f965567ab5f9.setIcon(icon_cfbecd1124624f94f886e3ca4a9f499a);
+        
+    
+        var popup_be94c98ff1b2c53dac93fe111be53d74 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c08a8c7441c2694fe926c7dab23459fd = $(`<div id="html_c08a8c7441c2694fe926c7dab23459fd" style="width: 100.0%; height: 100.0%;">Shree Shankar Fuel Station ( NAYARA )</div>`)[0];
+            popup_be94c98ff1b2c53dac93fe111be53d74.setContent(html_c08a8c7441c2694fe926c7dab23459fd);
+        
+
+        marker_b8edbb8a144d785ab0e0f965567ab5f9.bindPopup(popup_be94c98ff1b2c53dac93fe111be53d74)
+        ;
+
+        
+    
+    
+            var marker_d074d36f43b6804febb48be72f9a0ac9 = L.marker(
+                [12.9410958, 77.6958901],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_93100c3acdaee925556fe1b6e66fb82f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_d074d36f43b6804febb48be72f9a0ac9.setIcon(icon_93100c3acdaee925556fe1b6e66fb82f);
+        
+    
+        var popup_886e14dea6d892d388d8e4e879da2ba1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b9bead8f2fdf0b49aae4ba214900e1ef = $(`<div id="html_b9bead8f2fdf0b49aae4ba214900e1ef" style="width: 100.0%; height: 100.0%;">s.v.m fuel station , petrol bunk</div>`)[0];
+            popup_886e14dea6d892d388d8e4e879da2ba1.setContent(html_b9bead8f2fdf0b49aae4ba214900e1ef);
+        
+
+        marker_d074d36f43b6804febb48be72f9a0ac9.bindPopup(popup_886e14dea6d892d388d8e4e879da2ba1)
+        ;
+
+        
+    
+    
+            var marker_5c8b7ed5f8371009b47013c518ef4505 = L.marker(
+                [12.95649, 77.6975],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_2aa6c038f9e091ac39c62c797785a879 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_5c8b7ed5f8371009b47013c518ef4505.setIcon(icon_2aa6c038f9e091ac39c62c797785a879);
+        
+    
+        var popup_f982dcbc308bf14aad41af9e5aad1053 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1876ef07befe214bc329692c7be851f1 = $(`<div id="html_1876ef07befe214bc329692c7be851f1" style="width: 100.0%; height: 100.0%;">Hindustan Petroleum Corporation Limited</div>`)[0];
+            popup_f982dcbc308bf14aad41af9e5aad1053.setContent(html_1876ef07befe214bc329692c7be851f1);
+        
+
+        marker_5c8b7ed5f8371009b47013c518ef4505.bindPopup(popup_f982dcbc308bf14aad41af9e5aad1053)
+        ;
+
+        
+    
+    
+            var marker_f92338112774d5bd444205a9a4d4f335 = L.marker(
+                [13.1135276, 77.8167498],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_ba13833af20c03e7775949a40eb5f147 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_f92338112774d5bd444205a9a4d4f335.setIcon(icon_ba13833af20c03e7775949a40eb5f147);
+        
+    
+        var popup_43f548fe32bce4db6881b9dd3c790b04 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e6735bd20a2b811e30f9bfb10c70d1be = $(`<div id="html_e6735bd20a2b811e30f9bfb10c70d1be" style="width: 100.0%; height: 100.0%;">Sri Maruthi Fuel Station</div>`)[0];
+            popup_43f548fe32bce4db6881b9dd3c790b04.setContent(html_e6735bd20a2b811e30f9bfb10c70d1be);
+        
+
+        marker_f92338112774d5bd444205a9a4d4f335.bindPopup(popup_43f548fe32bce4db6881b9dd3c790b04)
+        ;
+
+        
+    
+    
+            var marker_fd57c2b20ca3c9575843ebe839f3ddc5 = L.marker(
+                [13.1233021, 77.2511041],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_613fe7925a1fd8f55d775ee43544c7a9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_fd57c2b20ca3c9575843ebe839f3ddc5.setIcon(icon_613fe7925a1fd8f55d775ee43544c7a9);
+        
+    
+        var popup_10536f847918a9253746e8f6457e0812 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5786f76051ba543bba9a26a066aa0520 = $(`<div id="html_5786f76051ba543bba9a26a066aa0520" style="width: 100.0%; height: 100.0%;">MATHA FUEL STATION</div>`)[0];
+            popup_10536f847918a9253746e8f6457e0812.setContent(html_5786f76051ba543bba9a26a066aa0520);
+        
+
+        marker_fd57c2b20ca3c9575843ebe839f3ddc5.bindPopup(popup_10536f847918a9253746e8f6457e0812)
+        ;
+
+        
+    
+    
+            var marker_bb6d151c9954a1e48179700a4b2aff90 = L.marker(
+                [13.0279498, 77.6206521],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_17f0801f241e723725e46a4d046f212d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_bb6d151c9954a1e48179700a4b2aff90.setIcon(icon_17f0801f241e723725e46a4d046f212d);
+        
+    
+        var popup_74876e48ead73d56aea97d3cbb00826e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bd8f21ea110ca13db1e44bf7e851cb47 = $(`<div id="html_bd8f21ea110ca13db1e44bf7e851cb47" style="width: 100.0%; height: 100.0%;">GASPLUS Auto LPG station</div>`)[0];
+            popup_74876e48ead73d56aea97d3cbb00826e.setContent(html_bd8f21ea110ca13db1e44bf7e851cb47);
+        
+
+        marker_bb6d151c9954a1e48179700a4b2aff90.bindPopup(popup_74876e48ead73d56aea97d3cbb00826e)
+        ;
+
+        
+    
+    
+            var marker_25e012fdc64defa7777d1d04aa63e806 = L.marker(
+                [12.999002, 77.67482],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_cd7c4d15b8a6e343907f067d7c8a5612 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_25e012fdc64defa7777d1d04aa63e806.setIcon(icon_cd7c4d15b8a6e343907f067d7c8a5612);
+        
+    
+        var popup_264760c9a5d1149e43baebbdbd777601 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ddb12858bfe7364df5b3bd2e88a51c39 = $(`<div id="html_ddb12858bfe7364df5b3bd2e88a51c39" style="width: 100.0%; height: 100.0%;">Bharat Petroleum Reliable fuel station</div>`)[0];
+            popup_264760c9a5d1149e43baebbdbd777601.setContent(html_ddb12858bfe7364df5b3bd2e88a51c39);
+        
+
+        marker_25e012fdc64defa7777d1d04aa63e806.bindPopup(popup_264760c9a5d1149e43baebbdbd777601)
+        ;
+
+        
+    
+    
+            var marker_1b0a0bc9ba21d444000b985372795e21 = L.marker(
+                [12.997167, 77.6918],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_a2ce98d11b87f855712c119e6f3f66d8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_1b0a0bc9ba21d444000b985372795e21.setIcon(icon_a2ce98d11b87f855712c119e6f3f66d8);
+        
+    
+        var popup_eb14ac098d3c781cca1119fed29ca3a4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cb2ff0ae5896b626b6979fd4e0fcf66f = $(`<div id="html_cb2ff0ae5896b626b6979fd4e0fcf66f" style="width: 100.0%; height: 100.0%;">Hindustan Petroleum Corporation Limited</div>`)[0];
+            popup_eb14ac098d3c781cca1119fed29ca3a4.setContent(html_cb2ff0ae5896b626b6979fd4e0fcf66f);
+        
+
+        marker_1b0a0bc9ba21d444000b985372795e21.bindPopup(popup_eb14ac098d3c781cca1119fed29ca3a4)
+        ;
+
+        
+    
+    
+            var marker_30e77db9528151c2c6274bc5ac64903b = L.marker(
+                [13.2417155, 77.7137306],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_6272aec2781ae658866407e7ab10fb73 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_30e77db9528151c2c6274bc5ac64903b.setIcon(icon_6272aec2781ae658866407e7ab10fb73);
+        
+    
+        var popup_f4389a85cd94b5bcc84fbdab0cb4a653 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_038eca7da3cb2b8629e68f774905b3d1 = $(`<div id="html_038eca7da3cb2b8629e68f774905b3d1" style="width: 100.0%; height: 100.0%;">Indane Gas Station</div>`)[0];
+            popup_f4389a85cd94b5bcc84fbdab0cb4a653.setContent(html_038eca7da3cb2b8629e68f774905b3d1);
+        
+
+        marker_30e77db9528151c2c6274bc5ac64903b.bindPopup(popup_f4389a85cd94b5bcc84fbdab0cb4a653)
+        ;
+
+        
+    
+    
+            var marker_30ccf8097ca5e6ef0f4e4247807db953 = L.marker(
+                [13.0263631, 77.7214587],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_b3e725166459d2c253f5001a44419808 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_30ccf8097ca5e6ef0f4e4247807db953.setIcon(icon_b3e725166459d2c253f5001a44419808);
+        
+    
+        var popup_222ef3c99cd028b0e15822618db0c5c3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_423ce98bd9b44035ff4abc4f68e42196 = $(`<div id="html_423ce98bd9b44035ff4abc4f68e42196" style="width: 100.0%; height: 100.0%;">M/S Sri Tirumala Super Service</div>`)[0];
+            popup_222ef3c99cd028b0e15822618db0c5c3.setContent(html_423ce98bd9b44035ff4abc4f68e42196);
+        
+
+        marker_30ccf8097ca5e6ef0f4e4247807db953.bindPopup(popup_222ef3c99cd028b0e15822618db0c5c3)
+        ;
+
+        
+    
+    
+            var marker_e9c1cea38995342860f49bdad18331bc = L.marker(
+                [13.0454312, 77.5087064],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_283eda6bb9a8ce01c478015e10a7b2a5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_e9c1cea38995342860f49bdad18331bc.setIcon(icon_283eda6bb9a8ce01c478015e10a7b2a5);
+        
+    
+        var popup_593890c28b754476ec86c77ce50d6a28 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f10bdf1c6fad4917e865504e7c26db9c = $(`<div id="html_f10bdf1c6fad4917e865504e7c26db9c" style="width: 100.0%; height: 100.0%;">SANAND fuel station</div>`)[0];
+            popup_593890c28b754476ec86c77ce50d6a28.setContent(html_f10bdf1c6fad4917e865504e7c26db9c);
+        
+
+        marker_e9c1cea38995342860f49bdad18331bc.bindPopup(popup_593890c28b754476ec86c77ce50d6a28)
+        ;
+
+        
+    
+    
+            var marker_314cab8ca037c9f7b80750d29ec49553 = L.marker(
+                [12.8605509, 77.7824534],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_39c1a6ff840684e6af55e4ecf4b613c8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_314cab8ca037c9f7b80750d29ec49553.setIcon(icon_39c1a6ff840684e6af55e4ecf4b613c8);
+        
+    
+        var popup_476e2c713e766aaad78d8df020100569 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d40e8b3d93c658ec8643f62b3b13d489 = $(`<div id="html_d40e8b3d93c658ec8643f62b3b13d489" style="width: 100.0%; height: 100.0%;">Indian Oil Fuel Station</div>`)[0];
+            popup_476e2c713e766aaad78d8df020100569.setContent(html_d40e8b3d93c658ec8643f62b3b13d489);
+        
+
+        marker_314cab8ca037c9f7b80750d29ec49553.bindPopup(popup_476e2c713e766aaad78d8df020100569)
+        ;
+
+        
+    
+    
+            var marker_c7ae895bb508344159487665a8909298 = L.marker(
+                [12.8838648, 77.5508339],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_844ae35e073cff66d35878e976c5bd6a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_c7ae895bb508344159487665a8909298.setIcon(icon_844ae35e073cff66d35878e976c5bd6a);
+        
+    
+        var popup_60ff0cd4f7e160fabbcb495a49c62b66 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_29d617694c7f086ec53636d2f4a51f01 = $(`<div id="html_29d617694c7f086ec53636d2f4a51f01" style="width: 100.0%; height: 100.0%;">Indian Oil Petrol Bunk-Sree Shakthi Filling Station</div>`)[0];
+            popup_60ff0cd4f7e160fabbcb495a49c62b66.setContent(html_29d617694c7f086ec53636d2f4a51f01);
+        
+
+        marker_c7ae895bb508344159487665a8909298.bindPopup(popup_60ff0cd4f7e160fabbcb495a49c62b66)
+        ;
+
+        
+    
+    
+            var marker_99fcb14c0dd641d903115e7f8b3f595f = L.marker(
+                [13.0262852, 77.6351286],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_a10ba5f52dcba98d8df2dcb08b285d0a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_99fcb14c0dd641d903115e7f8b3f595f.setIcon(icon_a10ba5f52dcba98d8df2dcb08b285d0a);
+        
+    
+        var popup_c4905a53f417a76cf939d4d55e477dce = L.popup({"maxWidth": "100%"});
+
+        
+            var html_54ff0c62494e4cdab3be8039443fae01 = $(`<div id="html_54ff0c62494e4cdab3be8039443fae01" style="width: 100.0%; height: 100.0%;">BP Petrol Pump</div>`)[0];
+            popup_c4905a53f417a76cf939d4d55e477dce.setContent(html_54ff0c62494e4cdab3be8039443fae01);
+        
+
+        marker_99fcb14c0dd641d903115e7f8b3f595f.bindPopup(popup_c4905a53f417a76cf939d4d55e477dce)
+        ;
+
+        
+    
+    
+            var marker_d8d39b636b0915f372a9c22786a5b84e = L.marker(
+                [12.9395961, 77.7271832],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_b6a92de5b19266622d9e8a78e41c3b0b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_d8d39b636b0915f372a9c22786a5b84e.setIcon(icon_b6a92de5b19266622d9e8a78e41c3b0b);
+        
+    
+        var popup_d2b2b69ef39251c0c55638af28816493 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9fcdfef4e34121d93aae644f8ec0ef15 = $(`<div id="html_9fcdfef4e34121d93aae644f8ec0ef15" style="width: 100.0%; height: 100.0%;">Harikrishna Fuel Station (Bharat Petroleum)</div>`)[0];
+            popup_d2b2b69ef39251c0c55638af28816493.setContent(html_9fcdfef4e34121d93aae644f8ec0ef15);
+        
+
+        marker_d8d39b636b0915f372a9c22786a5b84e.bindPopup(popup_d2b2b69ef39251c0c55638af28816493)
+        ;
+
+        
+    
+    
+            var marker_ccc24f8bb49929ea6edab1fba50edfa2 = L.marker(
+                [12.8616783, 77.5804113],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_e15f68eaf5f5a5e541f2bf574d07ff4f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_ccc24f8bb49929ea6edab1fba50edfa2.setIcon(icon_e15f68eaf5f5a5e541f2bf574d07ff4f);
+        
+    
+        var popup_5d8a498d73964ea4bdac474d44d22005 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9ef6efeca82fd77c3aa7dae63a1320bc = $(`<div id="html_9ef6efeca82fd77c3aa7dae63a1320bc" style="width: 100.0%; height: 100.0%;">Indian oil fuel station</div>`)[0];
+            popup_5d8a498d73964ea4bdac474d44d22005.setContent(html_9ef6efeca82fd77c3aa7dae63a1320bc);
+        
+
+        marker_ccc24f8bb49929ea6edab1fba50edfa2.bindPopup(popup_5d8a498d73964ea4bdac474d44d22005)
+        ;
+
+        
+    
+    
+            var marker_d444e71e7a0eb8e8b4a110252dab9d7e = L.marker(
+                [12.9868672, 77.5680135],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_70d37527dfa62b448738da76ec2cba7b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_d444e71e7a0eb8e8b4a110252dab9d7e.setIcon(icon_70d37527dfa62b448738da76ec2cba7b);
+        
+    
+        var popup_79d3903dff340c07f34c0d6de20436c6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_de65721ef62304d9907afef95f96503d = $(`<div id="html_de65721ef62304d9907afef95f96503d" style="width: 100.0%; height: 100.0%;">TRT SERVICE STATION</div>`)[0];
+            popup_79d3903dff340c07f34c0d6de20436c6.setContent(html_de65721ef62304d9907afef95f96503d);
+        
+
+        marker_d444e71e7a0eb8e8b4a110252dab9d7e.bindPopup(popup_79d3903dff340c07f34c0d6de20436c6)
+        ;
+
+        
+    
+    
+            var marker_f16b8c14176f9cd3b617702a8c74182e = L.marker(
+                [12.8990473, 77.6584243],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_5bae297dab18606dd80b1d8e36ee5502 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_f16b8c14176f9cd3b617702a8c74182e.setIcon(icon_5bae297dab18606dd80b1d8e36ee5502);
+        
+    
+        var popup_8b6989569efee4433bbf8c784dfd11e7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9d2b099a9732ad85a9e5367b1fa5a4b2 = $(`<div id="html_9d2b099a9732ad85a9e5367b1fa5a4b2" style="width: 100.0%; height: 100.0%;">Indian Oil</div>`)[0];
+            popup_8b6989569efee4433bbf8c784dfd11e7.setContent(html_9d2b099a9732ad85a9e5367b1fa5a4b2);
+        
+
+        marker_f16b8c14176f9cd3b617702a8c74182e.bindPopup(popup_8b6989569efee4433bbf8c784dfd11e7)
+        ;
+
+        
+    
+    
+            var marker_144305417597dff829df2d8feb1d21b4 = L.marker(
+                [12.8166656, 77.6915769],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_6913efd0579c15d8db2da1c3b4a38e8d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_144305417597dff829df2d8feb1d21b4.setIcon(icon_6913efd0579c15d8db2da1c3b4a38e8d);
+        
+    
+        var popup_f5067e8c7aa265e51c9cde893b49f1b0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bf44b3dfd22de99fd0960971291fe8be = $(`<div id="html_bf44b3dfd22de99fd0960971291fe8be" style="width: 100.0%; height: 100.0%;">Bharat Petroleum Fuel Station Saklaspur Enterprises</div>`)[0];
+            popup_f5067e8c7aa265e51c9cde893b49f1b0.setContent(html_bf44b3dfd22de99fd0960971291fe8be);
+        
+
+        marker_144305417597dff829df2d8feb1d21b4.bindPopup(popup_f5067e8c7aa265e51c9cde893b49f1b0)
+        ;
+
+        
+    
+    
+            var marker_9043e25615aaab65884d86329294b9b9 = L.marker(
+                [12.9652077, 77.7332013],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_2be6e67bf23c2d7494ce59c28e188567 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_9043e25615aaab65884d86329294b9b9.setIcon(icon_2be6e67bf23c2d7494ce59c28e188567);
+        
+    
+        var popup_ee688394bdb791542f98c5c0859f9d27 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_44cb48e787fa670701d4a56d47c556cb = $(`<div id="html_44cb48e787fa670701d4a56d47c556cb" style="width: 100.0%; height: 100.0%;">HP Fuel Station</div>`)[0];
+            popup_ee688394bdb791542f98c5c0859f9d27.setContent(html_44cb48e787fa670701d4a56d47c556cb);
+        
+
+        marker_9043e25615aaab65884d86329294b9b9.bindPopup(popup_ee688394bdb791542f98c5c0859f9d27)
+        ;
+
+        
+    
+    
+            var marker_8e2c1c45aee94c8d2fd627dc9c504dda = L.marker(
+                [12.9323163, 77.5415255],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_b13d34083d98ca806a8e4aed1f73a683 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_8e2c1c45aee94c8d2fd627dc9c504dda.setIcon(icon_b13d34083d98ca806a8e4aed1f73a683);
+        
+    
+        var popup_34e2764c84b1474b0746ee418e80b55b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ae6619f897287c2ba1021180cd470711 = $(`<div id="html_ae6619f897287c2ba1021180cd470711" style="width: 100.0%; height: 100.0%;">Hindustan Petroleum Corporation Limited</div>`)[0];
+            popup_34e2764c84b1474b0746ee418e80b55b.setContent(html_ae6619f897287c2ba1021180cd470711);
+        
+
+        marker_8e2c1c45aee94c8d2fd627dc9c504dda.bindPopup(popup_34e2764c84b1474b0746ee418e80b55b)
+        ;
+
+        
+    
+    
+            var marker_cc738f66f2c26b08a88d7cc06b7718fb = L.marker(
+                [13.0918249, 77.6359763],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_0e6742914ea65c0a07353a6d87579ee3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_cc738f66f2c26b08a88d7cc06b7718fb.setIcon(icon_0e6742914ea65c0a07353a6d87579ee3);
+        
+    
+        var popup_da4088b571482291749a8799bb3f6511 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_74cf2a42ee2a7227fecd203162776348 = $(`<div id="html_74cf2a42ee2a7227fecd203162776348" style="width: 100.0%; height: 100.0%;">GAIL Gas CNG Station</div>`)[0];
+            popup_da4088b571482291749a8799bb3f6511.setContent(html_74cf2a42ee2a7227fecd203162776348);
+        
+
+        marker_cc738f66f2c26b08a88d7cc06b7718fb.bindPopup(popup_da4088b571482291749a8799bb3f6511)
+        ;
+
+        
+    
+    
+            var marker_e691cc58b70bc5986282f8873ca53cf4 = L.marker(
+                [12.8491047, 77.8993726],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_722b022869e3f0ea3db0224db928981b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_e691cc58b70bc5986282f8873ca53cf4.setIcon(icon_722b022869e3f0ea3db0224db928981b);
+        
+    
+        var popup_7c4d1a94835c73ff3ab854145c5b4241 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_175ee6407e52829304298e0c66ff1fe1 = $(`<div id="html_175ee6407e52829304298e0c66ff1fe1" style="width: 100.0%; height: 100.0%;">Sri Vidhathri Fuel Station Bharat Petroleum</div>`)[0];
+            popup_7c4d1a94835c73ff3ab854145c5b4241.setContent(html_175ee6407e52829304298e0c66ff1fe1);
+        
+
+        marker_e691cc58b70bc5986282f8873ca53cf4.bindPopup(popup_7c4d1a94835c73ff3ab854145c5b4241)
+        ;
+
+        
+    
+    
+            var marker_181cb3fe804b8d292460485310fb8e7d = L.marker(
+                [12.9148603, 77.5206395],
+                {}
+            ).addTo(map_c5ab774b26ae5b180ef332edcf751c57);
+        
+    
+            var icon_7ee26928ff1213b446e6eba8b9872b84 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_181cb3fe804b8d292460485310fb8e7d.setIcon(icon_7ee26928ff1213b446e6eba8b9872b84);
+        
+    
+        var popup_834b18fd49a89b00276bcc696d2b25f9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_430400c23eeee341cd2ea8e12138a8c3 = $(`<div id="html_430400c23eeee341cd2ea8e12138a8c3" style="width: 100.0%; height: 100.0%;">Go gas lpg fuel station</div>`)[0];
+            popup_834b18fd49a89b00276bcc696d2b25f9.setContent(html_430400c23eeee341cd2ea8e12138a8c3);
+        
+
+        marker_181cb3fe804b8d292460485310fb8e7d.bindPopup(popup_834b18fd49a89b00276bcc696d2b25f9)
+        ;
+
+        
+    
+    
+            map_c5ab774b26ae5b180ef332edcf751c57.fitBounds(
+                [[12.698218, 77.2511041], [13.2417155, 77.8993726]],
+                {}
+            );
+        
+</script>
